@@ -7,15 +7,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Álbum Copa 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --gold:#C9A84C; --gold-l:#E8C96A;
-  --bg:#0C1018; --surf:#141B26; --surf2:#1C2636; --surf3:#222E42;
-  --bd:rgba(201,168,76,.15); --bd2:rgba(255,255,255,.07);
-  --text:#EEE9DF; --muted:#7A8BA8;
-  --green:#27AE60; --gbg:rgba(39,174,96,.13); --gbd:rgba(39,174,96,.45);
-  --orange:#E67E22; --obg:rgba(230,126,34,.13); --obd:rgba(230,126,34,.45);
+:root{
+  --gold:#C9A84C;--gold-l:#E8C96A;
+  --bg:#0C1018;--surf:#141B26;--surf2:#1C2636;--surf3:#222E42;
+  --bd:rgba(201,168,76,.15);--bd2:rgba(255,255,255,.07);
+  --text:#EEE9DF;--muted:#7A8BA8;
+  --green:#27AE60;--gbg:rgba(39,174,96,.13);--gbd:rgba(39,174,96,.45);
+  --orange:#E67E22;--obg:rgba(230,126,34,.13);--obd:rgba(230,126,34,.45);
   --red:#E74C3C;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -23,85 +23,84 @@ html,body{height:100%;overflow:hidden}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;display:flex;flex-direction:column}
 
 /* HEADER */
-header{height:56px;background:var(--surf);border-bottom:1px solid var(--bd);display:flex;align-items:center;padding:0 12px;gap:10px;flex-shrink:0;z-index:50}
+header{height:56px;background:var(--surf);border-bottom:1px solid var(--bd);display:flex;align-items:center;padding:0 12px;gap:10px;flex-shrink:0}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gold);letter-spacing:2px;white-space:nowrap;line-height:1}
 .logo span{color:var(--muted);font-size:1rem}
-.hdr-prog{flex:1;min-width:0}
-.hdr-nums{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);margin-bottom:4px}
-.hdr-nums strong{color:var(--gold-l)}
+.hprog{flex:1;min-width:0}
+.hnums{display:flex;justify-content:space-between;font-size:.68rem;color:var(--muted);margin-bottom:4px}
+.hnums strong{color:var(--gold-l)}
 .pt{height:5px;background:var(--surf2);border-radius:99px;overflow:hidden}
 .pf{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-l));border-radius:99px;transition:width .4s;width:0%}
 
-/* FILTER */
-.fbar{height:48px;background:var(--surf);border-bottom:1px solid var(--bd2);display:flex;align-items:center;padding:0 10px;gap:6px;flex-shrink:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+/* FILTER BAR */
+.fbar{height:46px;background:var(--surf);border-bottom:1px solid var(--bd2);display:flex;align-items:center;padding:0 10px;gap:6px;flex-shrink:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .fbar::-webkit-scrollbar{display:none}
 .sw{position:relative;flex-shrink:0}
-.sw svg{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:14px;height:14px;fill:none;stroke:var(--muted);stroke-width:2;pointer-events:none}
-.sw input{background:var(--surf2);border:1px solid var(--bd2);color:var(--text);border-radius:8px;padding:7px 10px 7px 28px;font-family:'DM Sans',sans-serif;font-size:.8rem;width:130px;outline:none}
+.sw svg{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:13px;height:13px;fill:none;stroke:var(--muted);stroke-width:2;pointer-events:none}
+.sw input{background:var(--surf2);border:1px solid var(--bd2);color:var(--text);border-radius:8px;padding:6px 8px 6px 26px;font-family:'DM Sans',sans-serif;font-size:.78rem;width:128px;outline:none}
 .sw input::placeholder{color:var(--muted)}
 .sw input:focus{border-color:var(--gold)}
-.pill{flex-shrink:0;background:var(--surf2);border:1px solid var(--bd2);color:var(--muted);border-radius:99px;padding:5px 12px;font-family:'DM Sans',sans-serif;font-size:.76rem;cursor:pointer;white-space:nowrap;transition:all .15s;-webkit-user-select:none;user-select:none}
-.pill.active{background:var(--gold);color:#0C1018;border-color:var(--gold);font-weight:600}
+.pill{flex-shrink:0;background:var(--surf2);border:1px solid var(--bd2);color:var(--muted);border-radius:99px;padding:5px 11px;font-family:'DM Sans',sans-serif;font-size:.74rem;cursor:pointer;white-space:nowrap;-webkit-user-select:none;user-select:none}
+.pill.on{background:var(--gold);color:#0C1018;border-color:var(--gold);font-weight:600}
 
 /* STATS */
 .srow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd2);border-bottom:1px solid var(--bd2);flex-shrink:0}
-.sc2{background:var(--surf);text-align:center;padding:7px 2px}
-.sc2 .n{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--gold);line-height:1}
-.sc2 .l{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:1px}
+.sc2{background:var(--surf);text-align:center;padding:6px 2px}
+.sc2 .n{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:var(--gold);line-height:1}
+.sc2 .l{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:1px}
 
 /* SCROLL */
 .sa{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 
 /* GROUPS */
-.gs{margin-bottom:4px}
-.gs.hidden{display:none}
-.gh{display:flex;align-items:center;padding:10px 12px 6px;gap:8px}
-.gl{font-family:'Bebas Neue',sans-serif;font-size:.95rem;color:var(--gold);letter-spacing:2px}
-.gp{font-size:.68rem;color:var(--muted);background:var(--surf2);padding:2px 8px;border-radius:99px;margin-left:auto}
+.gs{margin-bottom:2px}
+.gs.hid{display:none}
+.gh{display:flex;align-items:center;padding:8px 12px 5px;gap:8px}
+.gl{font-family:'Bebas Neue',sans-serif;font-size:.9rem;color:var(--gold);letter-spacing:2px}
+.gp{font-size:.65rem;color:var(--muted);background:var(--surf2);padding:2px 7px;border-radius:99px;margin-left:auto}
 
 /* TEAM */
-.tb{margin-bottom:2px}
-.tb.hidden{display:none}
-.th{display:flex;align-items:center;padding:10px 12px;background:var(--surf);gap:8px;cursor:pointer;-webkit-user-select:none;user-select:none;border-top:1px solid var(--bd2)}
-.tf{font-size:1.35rem;line-height:1}
-.tn{font-weight:500;font-size:.87rem;flex:1}
-.tst{font-size:.7rem;color:var(--gold);font-weight:600;white-space:nowrap}
-.cv{font-size:.6rem;color:var(--muted);transition:transform .2s;margin-left:4px}
+.tb{margin-bottom:1px}
+.tb.hid{display:none}
+.th{display:flex;align-items:center;padding:9px 12px;background:var(--surf);gap:8px;cursor:pointer;-webkit-user-select:none;user-select:none;border-top:1px solid var(--bd2)}
+.tf{font-size:1.3rem;line-height:1}
+.tn{font-weight:500;font-size:.85rem;flex:1}
+.ts{font-size:.68rem;color:var(--gold);font-weight:600;white-space:nowrap}
+.cv{font-size:.55rem;color:var(--muted);transition:transform .2s;margin-left:3px}
 .tb.open .cv{transform:rotate(180deg)}
 
 /* STICKER GRID */
-.sg{display:none;grid-template-columns:repeat(5,1fr);gap:3px;padding:6px 8px 10px;background:var(--bg)}
+.sg{display:none;grid-template-columns:repeat(5,1fr);gap:3px;padding:5px 7px 8px;background:var(--bg)}
 .tb.open .sg{display:grid}
 
 /* CELL */
-.sc{background:var(--surf2);border:1.5px solid var(--bd2);border-radius:8px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px 5px;position:relative;transition:border-color .15s,background .15s,opacity .15s}
-.sn{font-size:.6rem;color:var(--muted);line-height:1;font-weight:500}
-.si{width:30px;height:30px;border-radius:5px;background:var(--surf3);display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:500;color:var(--muted);text-align:center;line-height:1.2;position:relative;flex-shrink:0}
-.sqb{display:none;position:absolute;top:-5px;right:-5px;background:var(--orange);color:#fff;font-size:.52rem;font-weight:700;border-radius:99px;min-width:15px;height:15px;align-items:center;justify-content:center;padding:0 3px;line-height:1}
-.sct{display:flex;align-items:center;gap:3px;margin-top:2px}
-.sb{width:24px;height:24px;border-radius:6px;border:1px solid var(--bd2);background:var(--surf3);color:var(--muted);font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-user-select:none;user-select:none;font-family:'DM Sans',sans-serif;line-height:1;touch-action:manipulation;transition:all .1s}
-.sb:active{transform:scale(.85)}
+.sc{background:var(--surf2);border:1.5px solid var(--bd2);border-radius:8px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 2px 4px;transition:border-color .12s,background .12s,opacity .12s}
+.sn{font-size:.58rem;color:var(--muted);line-height:1;font-weight:500}
+.si{width:30px;height:30px;border-radius:5px;background:var(--surf3);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:600;color:var(--muted);text-align:center;line-height:1.2;position:relative;flex-shrink:0}
+.sqb{display:none;position:absolute;top:-5px;right:-5px;background:var(--orange);color:#fff;font-size:.5rem;font-weight:700;border-radius:99px;min-width:14px;height:14px;align-items:center;justify-content:center;padding:0 2px;line-height:1}
+.sct{display:flex;align-items:center;gap:2px;margin-top:2px}
+.sb{width:22px;height:22px;border-radius:6px;border:1px solid var(--bd2);background:var(--surf3);color:var(--muted);font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-user-select:none;user-select:none;font-family:'DM Sans',sans-serif;line-height:1;touch-action:manipulation;transition:all .1s}
+.sb:active{transform:scale(.82)}
 .sb.plus:active{background:var(--green);color:#fff;border-color:var(--green)}
 .sb.minus:active{background:var(--red);color:#fff;border-color:var(--red)}
-.sv{font-size:.72rem;font-weight:600;color:var(--muted);min-width:14px;text-align:center;line-height:1}
+.sv{font-size:.7rem;font-weight:600;color:var(--muted);min-width:13px;text-align:center;line-height:1}
 
 /* STATES */
-.sc[data-q="0"]{opacity:.45}
+.sc[data-q="0"]{opacity:.42}
 .sc[data-q="1"]{opacity:1;border-color:var(--gbd);background:var(--gbg)}
 .sc[data-q="1"] .sv,.sc[data-q="1"] .sn{color:var(--green)}
 .sc[data-q="2"],.sc[data-q="3"],.sc[data-q="4"],.sc[data-q="5"],.sc[data-q="6"],.sc[data-q="7"],.sc[data-q="8"],.sc[data-q="9"]{opacity:1;border-color:var(--obd);background:var(--obg)}
 .sc[data-q="2"] .sv,.sc[data-q="3"] .sv,.sc[data-q="4"] .sv,.sc[data-q="5"] .sv,.sc[data-q="6"] .sv,.sc[data-q="7"] .sv,.sc[data-q="8"] .sv,.sc[data-q="9"] .sv,
 .sc[data-q="2"] .sn,.sc[data-q="3"] .sn,.sc[data-q="4"] .sn,.sc[data-q="5"] .sn,.sc[data-q="6"] .sn,.sc[data-q="7"] .sn,.sc[data-q="8"] .sn,.sc[data-q="9"] .sn{color:var(--orange)}
 .sc:not([data-q="0"]):not([data-q="1"]) .sqb{display:flex}
-
-/* SPECIAL */
-.sc.sp .si{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);font-size:.95rem}
+.sc.sp .si{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);font-size:.9rem}
 
 /* IO BAR */
-.io{border-top:1px solid var(--bd2);background:var(--surf);display:flex;align-items:center;padding:7px 10px;gap:6px;flex-shrink:0}
-.ib{background:var(--surf2);border:1px solid var(--bd2);color:var(--muted);border-radius:8px;padding:6px 12px;font-family:'DM Sans',sans-serif;font-size:.74rem;cursor:pointer}
+.io{border-top:1px solid var(--bd2);background:var(--surf);display:flex;align-items:center;padding:6px 10px;gap:6px;flex-shrink:0}
+.ib{background:var(--surf2);border:1px solid var(--bd2);color:var(--muted);border-radius:8px;padding:6px 11px;font-family:'DM Sans',sans-serif;font-size:.72rem;cursor:pointer}
 .ib.danger{color:var(--red);border-color:rgba(231,76,60,.25)}
 .ib.ml{margin-left:auto}
+.save-hint{font-size:.62rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* EMPTY */
 .em{text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem;display:none}
@@ -119,8 +118,8 @@ header{height:56px;background:var(--surf);border-bottom:1px solid var(--bd);disp
 
 <header>
   <div class="logo">COPA <span>2026</span></div>
-  <div class="hdr-prog">
-    <div class="hdr-nums"><span>Progresso</span><span><strong id="h-have">0</strong> / 980</span></div>
+  <div class="hprog">
+    <div class="hnums"><span>Progresso</span><span><strong id="h-have">0</strong> / 980</span></div>
     <div class="pt"><div class="pf" id="pf"></div></div>
   </div>
 </header>
@@ -128,9 +127,9 @@ header{height:56px;background:var(--surf);border-bottom:1px solid var(--bd);disp
 <div class="fbar">
   <div class="sw">
     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="search" id="srch" placeholder="Nº ou nome..." autocomplete="off" autocorrect="off" spellcheck="false">
+    <input type="search" id="srch" placeholder="Sigla, nº ou nome..." autocomplete="off" spellcheck="false">
   </div>
-  <button class="pill active" data-f="all">Todas</button>
+  <button class="pill on" data-f="all">Todas</button>
   <button class="pill" data-f="missing">Faltando</button>
   <button class="pill" data-f="dups">Duplicadas</button>
 </div>
@@ -150,469 +149,557 @@ header{height:56px;background:var(--surf);border-bottom:1px solid var(--bd);disp
   <button class="ib" id="btn-exp">⬇ Exportar</button>
   <button class="ib" id="btn-imp">⬆ Importar</button>
   <input type="file" id="fi" accept=".json" style="display:none">
+  <span class="save-hint">Salvo automaticamente</span>
   <button class="ib danger ml" id="btn-rst">↺ Zerar</button>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// ── DATA ──────────────────────────────────────────────────────
-function p(n,label){return{n,label}}
-function sp(n,label){return{n,label,s:1}}
+// ─── DADOS — 48 seleções reais + numeração por sigla (MEX-1, BRA-1...) ────────
+// Estrutura: { id, name, flag, group, code, stickers:[{n, label, sp?}] }
+// n = número local dentro do time (1=escudo/foto, 2-19=jogadores)
+// A numeração MEX-1 é exibida como "MEX 1" na figurinha
 
-const TEAMS=[
-  // INTRO
-  {id:'INTRO',name:'Introdução',flag:'🏆',g:'INTRO',stickers:[
-    sp(1,'Logo FIFA'),sp(2,'Mascote Amigo'),sp(3,'Est. Los Angeles'),sp(4,'Est. Nova York'),
-    sp(5,'Est. Dallas'),sp(6,'Est. San Francisco'),sp(7,'Est. Seattle'),sp(8,'Est. Kansas City'),
-    sp(9,'Est. Miami'),sp(10,'Est. Boston'),sp(11,'Est. Guadalajara'),sp(12,'Est. Cd.México'),
-    sp(13,'Est. Monterrey'),sp(14,'Est. Vancouver'),sp(15,'Est. Toronto'),sp(16,'Est. Montreal'),
-  ]},
-  // GRUPO A
-  {id:'MEX',name:'México',flag:'🇲🇽',g:'A',stickers:[
-    sp(17,'Escudo México'),
-    p(18,'Luis Malagón'),p(19,'Johan Vásquez'),p(20,'Jorge Sánchez'),p(21,'César Montes'),
-    p(22,'Jesús Gallardo'),p(23,'Israel Reyes'),p(24,'Diego Lainez'),p(25,'Carlos Rodríguez'),
-    p(26,'Edson Álvarez'),p(27,'Orbelín Pineda'),p(28,'Marcel Ruiz'),p(29,'Érick Sánchez'),
-    p(30,'Hirving Lozano'),p(31,'Santiago Giménez'),p(32,'Raúl Jiménez'),
-    p(33,'Alexis Vega'),p(34,'Roberto Alvarado'),p(35,'César Huerta'),
-  ]},
-  {id:'RSA',name:'África do Sul',flag:'🇿🇦',g:'A',stickers:[
-    sp(36,'Escudo Áf.Sul'),
-    p(37,'Ronwen Williams'),p(38,'Sipho Chaine'),p(39,'Aubrey Modiba'),p(40,'Samukele Kabini'),
-    p(41,'Mbekezeli Mbokazi'),p(42,'Khulumani Ndamane'),p(43,'Siyabonga Ngezana'),p(44,'Khuliso Mudau'),
-    p(45,'Nkosinathi Sibisi'),p(46,'Teboho Mokoena'),p(47,'Thalente Mbatha'),p(48,'Bathuisi Aubaas'),
-    p(49,'Yaya Sithole'),p(50,'Sipho Mbule'),p(51,'Lyle Foster'),
-    p(52,'Ioraam Rayners'),p(53,'Mohau Nkota'),p(54,'Oswin Appolis'),
-  ]},
-  {id:'KOR',name:'Coreia do Sul',flag:'🇰🇷',g:'A',stickers:[
-    sp(55,'Escudo Coreia Sul'),
-    p(56,'Hyeon-woo Jo'),p(57,'Seung-Gyu Kim'),p(58,'Min-jae Kim'),p(59,'Yu-min Cho'),
-    p(60,'Young-woo Seol'),p(61,'Han-beom Lee'),p(62,'Tae-seok Lee'),p(63,'Myung-jae Lee'),
-    p(64,'Jae-sung Lee'),p(65,'In-beom Hwang'),p(66,'Kang-in Lee'),p(67,'Seung-ho Paik'),
-    p(68,'Jens Castrop'),p(69,'Dong-gyeong Lee'),p(70,'Gue-sung Cho'),
-    p(71,'Heung-min Son'),p(72,'Hee-chan Hwang'),p(73,'Hyeon-Gyu Oh'),
-  ]},
-  {id:'CZE',name:'Rep. Tcheca',flag:'🇨🇿',g:'A',stickers:[
-    sp(74,'Escudo Rep.Tcheca'),
-    p(75,'Matěj Kovář'),p(76,'Jindřich Staněk'),p(77,'Ladislav Krejčí'),p(78,'Vladimír Coufal'),
-    p(79,'Jaroslav Zelený'),p(80,'Tomáš Holeš'),p(81,'David Zima'),p(82,'Michal Sadílek'),
-    p(83,'Lukáš Provod'),p(84,'Lukáš Červ'),p(85,'Tomáš Souček'),p(86,'Pavel Šulc'),
-    p(87,'Matěj Vydra'),p(88,'Vasil Kušej'),p(89,'Tomáš Chorý'),
-    p(90,'Václav Černý'),p(91,'Adam Hložek'),p(92,'Patrik Schick'),
-  ]},
-  // GRUPO B
-  {id:'CAN',name:'Canadá',flag:'🇨🇦',g:'B',stickers:[
-    sp(93,'Escudo Canadá'),
-    p(94,'Dayne St. Clair'),p(95,'Alphonso Davies'),p(96,'Alistair Johnston'),p(97,'Samuel Adekugbe'),
-    p(98,'Richie Laryea'),p(99,'Derek Cornelius'),p(100,'Moïse Bombito'),p(101,'Kamal Miller'),
-    p(102,'Stephen Eustáquio'),p(103,'Ismaël Koné'),p(104,'Jonathan Osorio'),p(105,'Jacob Shaffelburg'),
-    p(106,'Mathieu Choinière'),p(107,'Niko Sigur'),p(108,'Tajon Buchanan'),
-    p(109,'Liam Millar'),p(110,'Cyle Larin'),p(111,'Jonathan David'),
-  ]},
-  {id:'BIH',name:'Bósnia e Herz.',flag:'🇧🇦',g:'B',stickers:[
-    sp(112,'Escudo Bósnia'),
-    p(113,'Nikola Vasilj'),p(114,'Amar Dedić'),p(115,'Sead Kolašinac'),p(116,'Tarik Muharemović'),
-    p(117,'Nihad Mujakić'),p(118,'Nikola Katić'),p(119,'A. Hadžiahmetović'),p(120,'Benjamin Tahirović'),
-    p(121,'Armin Gigović'),p(122,'Ivan Šunjić'),p(123,'Ivan Bašić'),p(124,'Dženis Burnić'),
-    p(125,'Esmir Bajraktarević'),p(126,'Amar Memić'),p(127,'Ermedin Demirović'),
-    p(128,'Edin Džeko'),p(129,'Samed Baždar'),p(130,'Haris Tabaković'),
-  ]},
-  {id:'QAT',name:'Catar',flag:'🇶🇦',g:'B',stickers:[
-    sp(131,'Escudo Catar'),
-    p(132,'Meshaal Barsham'),p(133,'Sultan Albrake'),p(134,'Lucas Mendes'),p(135,'Homam Ahmed'),
-    p(136,'Boualem Khoukhi'),p(137,'Pedro Miguel'),p(138,'Tarek Salman'),p(139,'M. Al-Mannai'),
-    p(140,'Karim Boudiaf'),p(141,'Assim Madibo'),p(142,'Ahmed Fatehi'),p(143,'Mohammed Waad'),
-    p(144,'Abdulaziz Hatem'),p(145,'Hassan Al-Haydos'),p(146,'Edmilson Junior'),
-    p(147,'Akram Afif'),p(148,'Ahmed Al Ganehi'),p(149,'Almoez Ali'),
-  ]},
-  {id:'SUI',name:'Suíça',flag:'🇨🇭',g:'B',stickers:[
-    sp(150,'Escudo Suíça'),
-    p(151,'Gregor Kobel'),p(152,'Yvon Mvogo'),p(153,'Manuel Akanji'),p(154,'Ricardo Rodriguez'),
-    p(155,'Nico Elvedi'),p(156,'Aurèle Amenda'),p(157,'Silvan Widmer'),p(158,'Granit Xhaka'),
-    p(159,'Denis Zakaria'),p(160,'Remo Freuler'),p(161,'Fabian Rieder'),p(162,'Ardon Jashari'),
-    p(163,'Johan Manzambi'),p(164,'Michel Aebischer'),p(165,'Breel Embolo'),
-    p(166,'Ruben Vargas'),p(167,'Dan Ndoye'),p(168,'Zeki Amdouni'),
-  ]},
-  // GRUPO C
-  {id:'BRA',name:'Brasil',flag:'🇧🇷',g:'C',stickers:[
-    sp(169,'Escudo Brasil'),
-    p(170,'Alisson'),p(171,'Bento'),p(172,'Marquinhos'),p(173,'Éder Militão'),
-    p(174,'Gabriel Magalhães'),p(175,'Danilo'),p(176,'Wesley'),p(177,'Lucas Paquetá'),
-    p(178,'Casemiro'),p(179,'Bruno Guimarães'),p(180,'Luiz Henrique'),p(181,'Vinícius Júnior'),
-    p(182,'Rodrygo'),p(183,'João Pedro'),p(184,'Matheus Cunha'),
-    p(185,'Gabriel Martinelli'),p(186,'Raphinha'),p(187,'Estêvão'),
-  ]},
-  {id:'MAR',name:'Marrocos',flag:'🇲🇦',g:'C',stickers:[
-    sp(188,'Escudo Marrocos'),
-    p(189,'Yassine Bounou'),p(190,'Munir El Kajoui'),p(191,'Achraf Hakimi'),p(192,'N. Mazraoui'),
-    p(193,'Nayef Aguerd'),p(194,'Romain Saïss'),p(195,'Jawad El Yamiq'),p(196,'Adam Masina'),
-    p(197,'Sofyan Amrabat'),p(198,'Azzedine Ounahi'),p(199,'E. Ben Seghir'),p(200,'B. El Khannouss'),
-    p(201,'Ismael Saibari'),p(202,'Y. En-Nesyri'),p(203,'Abde Ezzalzouli'),
-    p(204,'Soufiane Rahimi'),p(205,'Brahim Díaz'),p(206,'Ayoub El Kaabi'),
-  ]},
-  {id:'HAI',name:'Haiti',flag:'🇭🇹',g:'C',stickers:[
-    sp(207,'Escudo Haiti'),
-    p(208,'Johny Placide'),p(209,'Carlens Arcus'),p(210,'Martin Expérience'),p(211,'J-K. Duverne'),
-    p(212,'Ricardo Adé'),p(213,'Duke Lacroix'),p(214,'Garven Metusala'),p(215,'Hannes Delcroix'),
-    p(216,'Leverton Pierre'),p(217,'D. Jean Jacques'),p(218,'J-R. Bellegarde'),p(219,'Christopher Attys'),
-    p(220,'Derrick Etienne Jr.'),p(221,'Josué Casimir'),p(222,'Ruben Providence'),
-    p(223,'Duckens Nazon'),p(224,'Louicius Deedson'),p(225,'Frantzdy Pierrot'),
-  ]},
-  {id:'SCO',name:'Escócia',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',g:'C',stickers:[
-    sp(226,'Escudo Escócia'),
-    p(227,'Angus Gunn'),p(228,'Jack Hendry'),p(229,'Kieran Tierney'),p(230,'Aaron Hickey'),
-    p(231,'Andrew Robertson'),p(232,'Scott McKenna'),p(233,'John Souttar'),p(234,'Anthony Ralston'),
-    p(235,'Grant Hanley'),p(236,'Scott McTominay'),p(237,'Billy Gilmour'),p(238,'Lewis Ferguson'),
-    p(239,'Ryan Christie'),p(240,'Kenny McLean'),p(241,'John McGinn'),
-    p(242,'Lyndon Dykes'),p(243,'Che Adams'),p(244,'Ben Gannon-Doak'),
-  ]},
-  // GRUPO D
-  {id:'USA',name:'Estados Unidos',flag:'🇺🇸',g:'D',stickers:[
-    sp(245,'Escudo EUA'),
-    p(246,'Matt Freese'),p(247,'Chris Richards'),p(248,'Tim Ream'),p(249,'Mark McKenzie'),
-    p(250,'Alex Freeman'),p(251,'Antonee Robinson'),p(252,'Tyler Adams'),p(253,'Tanner Tessmann'),
-    p(254,'Weston McKennie'),p(255,'Christian Roldan'),p(256,'Timothy Weah'),p(257,'Diego Luna'),
-    p(258,'Malik Tillman'),p(259,'Christian Pulisic'),p(260,'Brenden Aaronson'),
-    p(261,'Ricardo Pepi'),p(262,'Haji Wright'),p(263,'Folarin Balogun'),
-  ]},
-  {id:'PAR',name:'Paraguai',flag:'🇵🇾',g:'D',stickers:[
-    sp(264,'Escudo Paraguai'),
-    p(265,'Roberto Fernández'),p(266,'Orlando Gill'),p(267,'Gustavo Gómez'),p(268,'Fabián Balbuena'),
-    p(269,'Juan José Cáceres'),p(270,'Omar Alderete'),p(271,'Junior Alonso'),p(272,'M. Villasanti'),
-    p(273,'Diego Gómez'),p(274,'Damián Bobadilla'),p(275,'Andrés Cubas'),p(276,'Matías Galarza'),
-    p(277,'Julio Enciso'),p(278,'Richard Sánchez'),p(279,'Braian Samudio'),
-    p(280,'Miguel Almirón'),p(281,'Antonio Sanabria'),p(282,'Kaku'),
-  ]},
-  {id:'AUS',name:'Austrália',flag:'🇦🇺',g:'D',stickers:[
-    sp(283,'Escudo Austrália'),
-    p(284,'Mathew Ryan'),p(285,'Joe Gauci'),p(286,'Harry Souttar'),p(287,'A. Circati'),
-    p(288,'Jordan Bos'),p(289,'Aziz Behich'),p(290,'Cameron Burgess'),p(291,'Lewis Miller'),
-    p(292,'Milos Degenek'),p(293,'Jackson Irvine'),p(294,'Riley McGree'),p(295,"Aiden O'Neill"),
-    p(296,'Connor Metcalfe'),p(297,'Patrick Yazbek'),p(298,'Craig Goodwin'),
-    p(299,'Kusini Yengi'),p(300,'Nestory Irankunda'),p(301,'Mohamed Touré'),
-  ]},
-  {id:'TUR',name:'Turquia',flag:'🇹🇷',g:'D',stickers:[
-    sp(302,'Escudo Turquia'),
-    p(303,'Ugurcan Cakir'),p(304,'Mert Muldur'),p(305,'Zeki Celik'),p(306,'A. Bardakci'),
-    p(307,'Caglar Soyuncu'),p(308,'Merih Demiral'),p(309,'Ferdi Kadioglu'),p(310,'Kaan Ayhan'),
-    p(311,'Ismail Yuksek'),p(312,'Hakan Calhanoglu'),p(313,'Orkun Kokcu'),p(314,'Arda Güler'),
-    p(315,'Irfan Can Kahveci'),p(316,'Yunus Akgun'),p(317,'Can Uzun'),
-    p(318,'Baris Alper Yilmaz'),p(319,'Kerem Akturkoglu'),p(320,'Kenan Yildiz'),
-  ]},
-  // GRUPO E
-  {id:'GER',name:'Alemanha',flag:'🇩🇪',g:'E',stickers:[
-    sp(321,'Escudo Alemanha'),
-    p(322,'M-A. ter Stegen'),p(323,'Jonathan Tah'),p(324,'David Raum'),p(325,'N. Schlotterbeck'),
-    p(326,'Antonio Rüdiger'),p(327,'Waldemar Anton'),p(328,'Ridle Baku'),p(329,'Max Mittelstädt'),
-    p(330,'Joshua Kimmich'),p(331,'Florian Wirtz'),p(332,'Felix Nmecha'),p(333,'Leon Goretzka'),
-    p(334,'Jamal Musiala'),p(335,'Serge Gnabry'),p(336,'Kai Havertz'),
-    p(337,'Leroy Sané'),p(338,'Karim Adeyemi'),p(339,'Nick Woltemade'),
-  ]},
-  {id:'CUR',name:'Curaçao',flag:'🇨🇼',g:'E',stickers:[
-    sp(340,'Escudo Curaçao'),
-    p(341,'Eloy Room'),p(342,'Armando Obispo'),p(343,'Sherel Floranus'),p(344,'Jurien Gaari'),
-    p(345,'Joshua Brenet'),p(346,'Roshon Van Eijma'),p(347,'Shurandy Sambo'),p(348,'L. Comenencia'),
-    p(349,'G. Roemeratoe'),p(350,'Juninho Bacuna'),p(351,'Leandro Bacuna'),p(352,'Tahith Chong'),
-    p(353,'Kenji Gorré'),p(354,'Jearl Margaritha'),p(355,'Jurgen Locadia'),
-    p(356,'Jeremy Antonisse'),p(357,'G. Kastaneer'),p(358,'Sontje Hansen'),
-  ]},
-  {id:'CIV',name:'Costa do Marfim',flag:'🇨🇮',g:'E',stickers:[
-    sp(359,'Escudo C.Marfim'),
-    p(360,'Yahia Fofana'),p(361,'Ghislain Konan'),p(362,'Wilfried Singo'),p(363,'O. Kossounou'),
-    p(364,'Evan Ndicka'),p(365,'Willy Boly'),p(366,'Emmanuel Agbadou'),p(367,'O. Diomande'),
-    p(368,'Franck Kessié'),p(369,'Seko Fofana'),p(370,'Ibrahim Sangaré'),p(371,'J-P. Gbamin'),
-    p(372,'Amad Diallo'),p(373,'Sébastien Haller'),p(374,'Simon Adingra'),
-    p(375,'Yan Diomande'),p(376,'Evann Guessand'),p(377,'Oumar Diakité'),
-  ]},
-  {id:'ECU',name:'Equador',flag:'🇪🇨',g:'E',stickers:[
-    sp(378,'Escudo Equador'),
-    p(379,'Hernán Galíndez'),p(380,'Gonzalo Valle'),p(381,'Piero Hincapié'),p(382,'P. Estupiñán'),
-    p(383,'Willian Pacho'),p(384,'Ángelo Preciado'),p(385,'Joel Ordóñez'),p(386,'Moisés Caicedo'),
-    p(387,'Alan Franco'),p(388,'Kendry Páez'),p(389,'Pedro Vite'),p(390,'John Yeboah'),
-    p(391,'Leonardo Campana'),p(392,'Gonzalo Plata'),p(393,'Nilson Angulo'),
-    p(394,'Alan Minda'),p(395,'Kevin Rodríguez'),p(396,'Enner Valencia'),
-  ]},
-  // GRUPO F
-  {id:'NED',name:'Holanda',flag:'🇳🇱',g:'F',stickers:[
-    sp(397,'Escudo Holanda'),
-    p(398,'Bart Verbruggen'),p(399,'Virgil van Dijk'),p(400,'Micky van de Ven'),p(401,'Jurriën Timber'),
-    p(402,'Denzel Dumfries'),p(403,'Nathan Aké'),p(404,'Jeremie Frimpong'),p(405,'J.P. van Hecke'),
-    p(406,'T. Reijnders'),p(407,'Ryan Gravenberch'),p(408,'T. Koopmeiners'),p(409,'Frenkie de Jong'),
-    p(410,'Xavi Simons'),p(411,'Justin Kluivert'),p(412,'Memphis Depay'),
-    p(413,'Donyell Malen'),p(414,'Wout Weghorst'),p(415,'Cody Gakpo'),
-  ]},
-  {id:'JPN',name:'Japão',flag:'🇯🇵',g:'F',stickers:[
-    sp(416,'Escudo Japão'),
-    p(417,'Zion Suzuki'),p(418,'Henry Mochizuki'),p(419,'Ayumu Seko'),p(420,'Junnosuke Suzuki'),
-    p(421,'Shogo Taniguchi'),p(422,'T. Watanabe'),p(423,'Kaishu Sano'),p(424,'Yuki Soma'),
-    p(425,'Ao Tanaka'),p(426,'Daichi Kamada'),p(427,'Takefusa Kubo'),p(428,'Ritsu Doan'),
-    p(429,'Keito Nakamura'),p(430,'Takumi Minamino'),p(431,'Shuto Machino'),
-    p(432,'Junya Ito'),p(433,'Koki Ogawa'),p(434,'Ayase Ueda'),
-  ]},
-  {id:'SWE',name:'Suécia',flag:'🇸🇪',g:'F',stickers:[
-    sp(435,'Escudo Suécia'),
-    p(436,'Victor Johansson'),p(437,'Isak Hien'),p(438,'G. Gudmundsson'),p(439,'Emil Holm'),
-    p(440,'V. Nilsson Lindelöf'),p(441,'G. Lagerbielke'),p(442,'Lucas Bergvall'),p(443,'Hugo Larsson'),
-    p(444,'Jesper Karlström'),p(445,'Yasin Ayari'),p(446,'Mattias Svanberg'),p(447,'Daniel Svensson'),
-    p(448,'Ken Sema'),p(449,'Roony Bardghji'),p(450,'Dejan Kulusevski'),
-    p(451,'Anthony Elanga'),p(452,'Alexander Isak'),p(453,'Viktor Gyökeres'),
-  ]},
-  {id:'TUN',name:'Tunísia',flag:'🇹🇳',g:'F',stickers:[
-    sp(454,'Escudo Tunísia'),
-    p(455,'Bechir Ben Said'),p(456,'Aymen Dahmen'),p(457,'Van Valery'),p(458,'Montassar Talbi'),
-    p(459,'Yassine Meriah'),p(460,'Ali Abdi'),p(461,'Dylan Bronn'),p(462,'Ellyes Skhiri'),
-    p(463,'Aissa Laidouni'),p(464,'Ferjani Sassi'),p(465,'M.A. Ben Romdhane'),p(466,'Hannibal Mejbri'),
-    p(467,'Elias Achouri'),p(468,'Elias Saad'),p(469,'Hazem Mastouri'),
-    p(470,'Ismael Gharbi'),p(471,'Sayfallah Ltaief'),p(472,'Naim Sliti'),
-  ]},
-  // GRUPO G
-  {id:'BEL',name:'Bélgica',flag:'🇧🇪',g:'G',stickers:[
-    sp(473,'Escudo Bélgica'),
-    p(474,'Thibaut Courtois'),p(475,'Arthur Theate'),p(476,'Timothy Castagne'),p(477,'Zeno Debast'),
-    p(478,'Brandon Mechele'),p(479,'Maxim De Cuyper'),p(480,'Thomas Meunier'),p(481,'Y. Tielemans'),
-    p(482,'Amadou Onana'),p(483,'Nicolas Raskin'),p(484,'A. Saelemaekers'),p(485,'Hans Vanaken'),
-    p(486,'Kevin De Bruyne'),p(487,'Jérémy Doku'),p(488,'C. De Ketelaere'),
-    p(489,'Leandro Trossard'),p(490,'Loïs Openda'),p(491,'Romelu Lukaku'),
-  ]},
-  {id:'EGY',name:'Egito',flag:'🇪🇬',g:'G',stickers:[
-    sp(492,'Escudo Egito'),
-    p(493,'M. El Shenawy'),p(494,'Mohamed Hany'),p(495,'Mohamed Hamdy'),p(496,'Yasser Ibrahim'),
-    p(497,'Khaled Sobhi'),p(498,'Ramy Rabia'),p(499,'H. Abdelmaguid'),p(500,'Ahmed Fatouh'),
-    p(501,'Marwan Attia'),p(502,'Zizo'),p(503,'Hamdy Fathy'),p(504,'Mohamed Lasheen'),
-    p(505,'Emam Ashour'),p(506,'Osama Faisal'),p(507,'Mohamed Salah'),
-    p(508,'Mostafa Mohamed'),p(509,'Trezeguet'),p(510,'Omar Marmoush'),
-  ]},
-  {id:'IRN',name:'Irã',flag:'🇮🇷',g:'G',stickers:[
-    sp(511,'Escudo Irã'),
-    p(512,'A. Beiranvand'),p(513,'M. Pouraliganji'),p(514,'Ehsan Hajsafi'),p(515,'M. Mohammadi'),
-    p(516,'Shoja Khalilzadeh'),p(517,'Ramin Rezaeian'),p(518,'Hossein Kanaani'),p(519,'S. Moharrami'),
-    p(520,'Saleh Hardani'),p(521,'Saeed Ezatolahi'),p(522,'Saman Ghoddos'),p(523,'O. Noorafkan'),
-    p(524,'Roozbeh Cheshmi'),p(525,'Mohammad Mohebi'),p(526,'Sardar Azmoun'),
-    p(527,'Mehdi Taremi'),p(528,'A. Jahanbakhsh'),p(529,'Ali Gholizadeh'),
-  ]},
-  {id:'NZL',name:'Nova Zelândia',flag:'🇳🇿',g:'G',stickers:[
-    sp(530,'Escudo N.Zelândia'),
-    p(531,'Max Crocombe-Payne'),p(532,'Alex Paulsen'),p(533,'Michael Boxall'),p(534,'L. Cacace'),
-    p(535,'Tim Payne'),p(536,'Tyler Bindon'),p(537,'Francis de Vries'),p(538,'Finn Surman'),
-    p(539,'Joe Bell'),p(540,'Sarpreet Singh'),p(541,'Ryan Thomas'),p(542,'Matthew Garbett'),
-    p(543,'Marko Stamenić'),p(544,'Ben Old'),p(545,'Chris Wood'),
-    p(546,'Elijah Just'),p(547,'Callum McCowatt'),p(548,'Kosta Barbarouses'),
-  ]},
-  // GRUPO H
-  {id:'ESP',name:'Espanha',flag:'🇪🇸',g:'H',stickers:[
-    sp(549,'Escudo Espanha'),
-    p(550,'Unai Simón'),p(551,'Robin Le Normand'),p(552,'Aymeric Laporte'),p(553,'Dean Huijsen'),
-    p(554,'Pedro Porro'),p(555,'Dani Carvajal'),p(556,'Marc Cucurella'),p(557,'M. Zubimendi'),
-    p(558,'Rodri'),p(559,'Pedri'),p(560,'Fabián Ruiz'),p(561,'Mikel Merino'),
-    p(562,'Lamine Yamal'),p(563,'Dani Olmo'),p(564,'Nico Williams'),
-    p(565,'Ferran Torres'),p(566,'Álvaro Morata'),p(567,'Mikel Oyarzabal'),
-  ]},
-  {id:'CPV',name:'Cabo Verde',flag:'🇨🇻',g:'H',stickers:[
-    sp(568,'Escudo Cabo Verde'),
-    p(569,'Vozinha'),p(570,'Logan Costa'),p(571,'Pico'),p(572,'Diney'),
-    p(573,'Steven Moreira'),p(574,'Wagner Pina'),p(575,'João Paulo'),p(576,'Yannick Semedo'),
-    p(577,'Kevin Pina'),p(578,'Patrick Andrade'),p(579,'Jamiro Monteiro'),p(580,'Deroy Duarte'),
-    p(581,'Garry Rodrigues'),p(582,'Jovane Cabral'),p(583,'Ryan Mendes'),
-    p(584,'Dailon Livramento'),p(585,'Willy Semedo'),p(586,'Bebé'),
-  ]},
-  {id:'KSA',name:'Arábia Saudita',flag:'🇸🇦',g:'H',stickers:[
-    sp(587,'Escudo Ar.Saudita'),
-    p(588,'Nawaf Alaqidi'),p(589,'A. Al-Sanbi'),p(590,'Saud Abdulhamid'),p(591,'Nawaf Boushal'),
-    p(592,'Jihad Thakri'),p(593,'Moteb Al-Harbi'),p(594,'Hassan Altambakti'),p(595,'M. Aljuwayr'),
-    p(596,'Ziyad Aljohani'),p(597,'A. Alkhaibari'),p(598,'Nasser Aldawsari'),p(599,'S.A. Alshamat'),
-    p(600,'Marwan Alsahafi'),p(601,'Salem Aldawsari'),p(602,'A. Al-Aboud'),
-    p(603,'Feras Albrikan'),p(604,'Saleh Alshehri'),p(605,'A. Al-Hamdan'),
-  ]},
-  {id:'URU',name:'Uruguai',flag:'🇺🇾',g:'H',stickers:[
-    sp(606,'Escudo Uruguai'),
-    p(607,'Sergio Rochet'),p(608,'Santiago Mele'),p(609,'Ronald Araujo'),p(610,'J.M. Giménez'),
-    p(611,'Sebastian Caceres'),p(612,'Mathias Olivera'),p(613,'Guillermo Varela'),p(614,'N. Nandez'),
-    p(615,'Federico Valverde'),p(616,'G. De Arrascaeta'),p(617,'R. Bentancur'),p(618,'Manuel Ugarte'),
-    p(619,'N. de la Cruz'),p(620,'Maxi Araujo'),p(621,'Darwin Núñez'),
-    p(622,'Federico Viñas'),p(623,'Rodrigo Aguirre'),p(624,'Facundo Pellistri'),
-  ]},
-  // GRUPO I
-  {id:'FRA',name:'França',flag:'🇫🇷',g:'I',stickers:[
-    sp(625,'Escudo França'),
-    p(626,'Mike Maignan'),p(627,'Theo Hernández'),p(628,'William Saliba'),p(629,'Jules Koundé'),
-    p(630,'Ibrahima Konaté'),p(631,'D. Upamecano'),p(632,'Lucas Digne'),p(633,'A. Tchouaméni'),
-    p(634,'E. Camavinga'),p(635,'Manu Koné'),p(636,'Adrien Rabiot'),p(637,'Michael Olise'),
-    p(638,'Ousmane Dembélé'),p(639,'Bradley Barcola'),p(640,'Désiré Doué'),
-    p(641,'Kingsley Coman'),p(642,'Hugo Ekitike'),p(643,'Kylian Mbappé'),
-  ]},
-  {id:'SEN',name:'Senegal',flag:'🇸🇳',g:'I',stickers:[
-    sp(644,'Escudo Senegal'),
-    p(645,'Eduardo Mendy'),p(646,'Yehvann Diouf'),p(647,'Moussa Niakhaté'),p(648,'A. Seck'),
-    p(649,'Ismail Jakobs'),p(650,'E.H.M. Diouf'),p(651,'Kalidou Koulibaly'),p(652,'I.G. Gueye'),
-    p(653,'Pape Matar Sarr'),p(654,'Pape Gueye'),p(655,'Habib Diarra'),p(656,'Lamine Camara'),
-    p(657,'Sadio Mane'),p(658,'Ismaïla Sarr'),p(659,'Boulaye Dia'),
-    p(660,'Iliman Ndiaye'),p(661,'Nicolas Jackson'),p(662,'Krepin Diatta'),
-  ]},
-  {id:'IRQ',name:'Iraque',flag:'🇮🇶',g:'I',stickers:[
-    sp(663,'Escudo Iraque'),
-    p(664,'Jalal Hassan'),p(665,'Rebin Sulaka'),p(666,'Hussein Ali'),p(667,'Akam Hashem'),
-    p(668,'Merchas Doski'),p(669,'Zaid Tahseen'),p(670,'Manaf Younis'),p(671,'Zidane Iqbal'),
-    p(672,'Amir Al-Ammari'),p(673,'Ibrahim Bayesh'),p(674,'Ali Jasim'),p(675,'Youssef Amyn'),
-    p(676,'Aimar Sher'),p(677,'Marko Farji'),p(678,'Osama Rashid'),
-    p(679,'Ali Al-Hamadi'),p(680,'Aymen Hussein'),p(681,'Mohanad Ali'),
-  ]},
-  {id:'NOR',name:'Noruega',flag:'🇳🇴',g:'I',stickers:[
-    sp(682,'Escudo Noruega'),
-    p(683,'Ørjan Nyland'),p(684,'Julian Ryerson'),p(685,'Leo Østigård'),p(686,'Kristoffer Ajer'),
-    p(687,'M.H. Pedersen'),p(688,'D.M. Wolfe'),p(689,'Torbjørn Heggem'),p(690,'Morten Thorsby'),
-    p(691,'Martin Ødegaard'),p(692,'Sander Berge'),p(693,'A. Schjelderup'),p(694,'Patrick Berg'),
-    p(695,'Erling Haaland'),p(696,'Alexander Sørloth'),p(697,'Aron Dønnum'),
-    p(698,'J.S. Larsen'),p(699,'Antonio Nusa'),p(700,'Oscar Bobb'),
-  ]},
-  // GRUPO J
-  {id:'ARG',name:'Argentina',flag:'🇦🇷',g:'J',stickers:[
-    sp(701,'Escudo Argentina'),
-    p(702,'Emiliano Martínez'),p(703,'Nahuel Molina'),p(704,'Cristian Romero'),p(705,'N. Otamendi'),
-    p(706,'N. Tagliafico'),p(707,'L. Balerdi'),p(708,'Enzo Fernández'),p(709,'A. Mac Allister'),
-    p(710,'Rodrigo De Paul'),p(711,'E. Palacios'),p(712,'Leandro Paredes'),p(713,'Nico Paz'),
-    p(714,'F. Mastantuono'),p(715,'Nico González'),p(716,'Lionel Messi'),
-    p(717,'Lautaro Martínez'),p(718,'Julián Álvarez'),p(719,'Giuliano Simeone'),
-  ]},
-  {id:'ALG',name:'Argélia',flag:'🇩🇿',g:'J',stickers:[
-    sp(720,'Escudo Argélia'),
-    p(721,'Alexis Guendouz'),p(722,'Ramy Bensebaini'),p(723,'Youcef Atal'),p(724,'R. Aït-Nouri'),
-    p(725,'M.A. Tougai'),p(726,'Aïssa Mandi'),p(727,'Ismael Bennacer'),p(728,'Houssem Aouar'),
-    p(729,'H. Boudaoui'),p(730,'Ramiz Zerrouki'),p(731,'Nabil Bentaleb'),p(732,'Farés Chaibi'),
-    p(733,'Riyad Mahrez'),p(734,'Said Benrahma'),p(735,'A. Hadj Moussa'),
-    p(736,'Amine Gouiri'),p(737,'Baghdad Bounedjah'),p(738,'Mohammed Amoura'),
-  ]},
-  {id:'AUT',name:'Áustria',flag:'🇦🇹',g:'J',stickers:[
-    sp(739,'Escudo Áustria'),
-    p(740,'Alexander Schlager'),p(741,'Patrick Pentz'),p(742,'David Alaba'),p(743,'Kevin Danso'),
-    p(744,'Philipp Lienhart'),p(745,'Stefan Posch'),p(746,'Phillipp Mwene'),p(747,'Alexander Prass'),
-    p(748,'Xaver Schlager'),p(749,'Marcel Sabitzer'),p(750,'Konrad Laimer'),p(751,'F. Grillitsch'),
-    p(752,'Nicolas Seiwald'),p(753,'Romano Schmid'),p(754,'Patrick Wimmer'),
-    p(755,'C. Baumgartner'),p(756,'M. Gregoritsch'),p(757,'Marko Arnautović'),
-  ]},
-  {id:'JOR',name:'Jordânia',flag:'🇯🇴',g:'J',stickers:[
-    sp(758,'Escudo Jordânia'),
-    p(759,'Yazeed Abulaila'),p(760,'Ihsan Haddad'),p(761,'M. Abu Hashish'),p(762,'Yazan Al-Arab'),
-    p(763,'Abdallah Nasib'),p(764,'Saleem Obaid'),p(765,'M. Abualnadi'),p(766,'Ibrahim Saadeh'),
-    p(767,'N. Al-Rashdan'),p(768,'N. Al-Rawabdeh'),p(769,'M. Abu Taha'),p(770,'Amer Jamous'),
-    p(771,'Musa Al-Taamari'),p(772,'Yazan Al-Naimat'),p(773,'M. Al-Mardi'),
-    p(774,'Ali Olwan'),p(775,'M. Abu Zrayq'),p(776,'Ibrahim Sabra'),
-  ]},
-  // GRUPO K
-  {id:'POR',name:'Portugal',flag:'🇵🇹',g:'K',stickers:[
-    sp(777,'Escudo Portugal'),
-    p(778,'Diogo Costa'),p(779,'Jose Sa'),p(780,'Ruben Dias'),p(781,'João Cancelo'),
-    p(782,'Diogo Dalot'),p(783,'Nuno Mendes'),p(784,'Gonçalo Inácio'),p(785,'Bernardo Silva'),
-    p(786,'Bruno Fernandes'),p(787,'Ruben Neves'),p(788,'Vitinha'),p(789,'João Neves'),
-    p(790,'Cristiano Ronaldo'),p(791,'Francisco Trincão'),p(792,'João Felix'),
-    p(793,'Gonçalo Ramos'),p(794,'Pedro Neto'),p(795,'Rafael Leão'),
-  ]},
-  {id:'COD',name:'RD Congo',flag:'🇨🇩',g:'K',stickers:[
-    sp(796,'Escudo RD Congo'),
-    p(797,'Lionel Mpasi'),p(798,'Aaron Wan-Bissaka'),p(799,'Axel Tuanzebe'),p(800,'Arthur Masuaku'),
-    p(801,'Chancel Mbemba'),p(802,'Joris Kayembe'),p(803,'Charles Pickel'),p(804,'N. Mukau'),
-    p(805,'Edo Kayembe'),p(806,'S. Moutoussamy'),p(807,'Noah Sadiki'),p(808,'Théo Bongonda'),
-    p(809,'Meschack Elia'),p(810,'Yoane Wissa'),p(811,'Brian Cipenga'),
-    p(812,'Fiston Mayele'),p(813,'Cédric Bakambu'),p(814,'Nathanaël Mbuku'),
-  ]},
-  {id:'UZB',name:'Uzbequistão',flag:'🇺🇿',g:'K',stickers:[
-    sp(815,'Escudo Uzbequistão'),
-    p(816,'Utkir Yusupov'),p(817,'Farrukh Savfiev'),p(818,'S. Nasrullaev'),p(819,'U. Eshmurodov'),
-    p(820,'H. Aliqulov'),p(821,'R. Ashurmatov'),p(822,'K. Alijonov'),p(823,'A. Khusanov'),
-    p(824,'Odil Ahmedov'),p(825,'J. Masharipov'),p(826,'K. Alijonov II'),p(827,'J. Yaxshiboev'),
-    p(828,'Eldor Shomurodov'),p(829,'Otabek Shukurov'),p(830,'Umid Khashimov'),
-    p(831,'Islom Tukhtaev'),p(832,'A. Fayzullaev'),p(833,'B. Abdixoliqov'),
-  ]},
-  {id:'TGO',name:'Togo',flag:'🇹🇬',g:'K',stickers:[
-    sp(834,'Escudo Togo'),
-    p(835,'Kossi Agassa'),p(836,'A-R. Kouro'),p(837,'Améd Kodjia'),p(838,'Serge Akakpo'),
-    p(839,'Dossevi Gaetan'),p(840,'Robert Dovi'),p(841,'Bilal Bamba'),p(842,'Y. Djene'),
-    p(843,'E. Adebayor'),p(844,'Kossi Koudagba'),p(845,'Laba Kodjo'),p(846,'Romain Adetola'),
-    p(847,'Yao Dare'),p(848,'K. Fo-Doh Laba'),p(849,'Mela Kokou'),
-    p(850,'Adeoti Yao'),p(851,'Salif Dembele'),p(852,'Y. Djene II'),
-  ]},
-  // GRUPO L
-  {id:'COL',name:'Colômbia',flag:'🇨🇴',g:'L',stickers:[
-    sp(853,'Escudo Colômbia'),
-    p(854,'David Ospina'),p(855,'Camilo Vargas'),p(856,'Dávinson Sánchez'),p(857,'Yerry Mina'),
-    p(858,'Jhon Lucumí'),p(859,'Carlos Cuesta'),p(860,'Daniel Muñoz'),p(861,'Johan Mojica'),
-    p(862,'Mateus Uribe'),p(863,'Wilmar Barrios'),p(864,'Jefferson Lerma'),p(865,'Juan Cuadrado'),
-    p(866,'James Rodríguez'),p(867,'Sebastián Villa'),p(868,'Luis Díaz'),
-    p(869,'R.S. Borré'),p(870,'M.A. Borja'),p(871,'J.J. Durán'),
-  ]},
-  {id:'VEN',name:'Venezuela',flag:'🇻🇪',g:'L',stickers:[
-    sp(872,'Escudo Venezuela'),
-    p(873,'Rafael Romo'),p(874,'Wuilker Faríñez'),p(875,'A. González'),p(876,'Jon Aramburu'),
-    p(877,'Nahuel Ferraresi'),p(878,'Luis Mago'),p(879,'Yordan Osorio'),p(880,'Miguel Navarro'),
-    p(881,'J. Savarino'),p(882,'Tomás Rincón'),p(883,'Yangel Herrera'),p(884,'Y. Soteldo'),
-    p(885,'Darwin Machís'),p(886,'C. Casseres Jr.'),p(887,'Eduard Bello'),
-    p(888,'Salomón Rondón'),p(889,'Jhonder Cabezas'),p(890,'Eric Ramírez'),
-  ]},
-  {id:'POL',name:'Polônia',flag:'🇵🇱',g:'L',stickers:[
-    sp(891,'Escudo Polônia'),
-    p(892,'Ł. Skorupski'),p(893,'W. Szczęsny'),p(894,'B. Bereszyński'),p(895,'Matty Cash'),
-    p(896,'Jan Bednarek'),p(897,'M. Wieteska'),p(898,'Robert Gumny'),p(899,'Nicola Zalewski'),
-    p(900,'P. Zieliński'),p(901,'Krystian Bielik'),p(902,'Jakub Moder'),p(903,'P. Frankowski'),
-    p(904,'S. Szymański'),p(905,'Karol Świderski'),p(906,'Arkadiusz Milik'),
-    p(907,'Robert Lewandowski'),p(908,'Adam Buksa'),p(909,'Dawid Kownacki'),
-  ]},
-  {id:'GNB',name:'Guiné-Bissau',flag:'🇬🇼',g:'L',stickers:[
-    sp(910,'Escudo Guiné-Bissau'),
-    p(911,'Jonas Mendes'),p(912,'Moreto Cassama'),p(913,'Cafu Rodrigues'),p(914,'Djibril Sow'),
-    p(915,'Bura da Silva'),p(916,'Frederic Maciel'),p(917,'Bobó'),p(918,'Mama Baldé'),
-    p(919,'Rúben Semedo'),p(920,'Carlos Mané'),p(921,'Pele Mané'),p(922,'Fernando Varela'),
-    p(923,'Nanu'),p(924,'Falaye Sacko'),p(925,'Malam Djassi'),
-    p(926,'Ibrahima Baldé'),p(927,'Nanu Mendes'),p(928,'Quintas'),
-  ]},
-  // ESPECIAIS
-  {id:'SPEC',name:'Especiais & Brilhantes',flag:'⭐',g:'ESPECIAIS',stickers:[
-    sp(929,'Messi Brilhante'),sp(930,'Mbappé Brilhante'),sp(931,'Vini Jr Brilhante'),
-    sp(932,'Haaland Brilhante'),sp(933,'Ronaldo Brilhante'),sp(934,'Salah Brilhante'),
-    sp(935,'De Bruyne Bril.'),sp(936,'Son Heung-min Bril.'),sp(937,'Wirtz Brilhante'),
-    sp(938,'Yamal Brilhante'),sp(939,'Gyökeres Bril.'),sp(940,'Isak Brilhante'),
-    sp(941,'Seleção Brasil'),sp(942,'Seleção Argentina'),sp(943,'Seleção França'),
-    sp(944,'Seleção Espanha'),sp(945,'Seleção Portugal'),sp(946,'Seleção Alemanha'),
-    sp(947,'Seleção Holanda'),sp(948,'Seleção Noruega'),sp(949,'Seleção Bélgica'),
-    sp(950,'Seleção Marrocos'),sp(951,'Seleção México'),sp(952,'Seleção Japão'),
-    sp(953,'Copa Brilhante 1'),sp(954,'Copa Brilhante 2'),sp(955,'Copa Brilhante 3'),
-    sp(956,'Copa Brilhante 4'),sp(957,'Copa Brilhante 5'),sp(958,'Copa Brilhante 6'),
-    sp(959,'Copa Brilhante 7'),sp(960,'Copa Brilhante 8'),sp(961,'Copa Brilhante 9'),
-    sp(962,'Copa Brilhante 10'),sp(963,'Pôster EUA'),sp(964,'Pôster México'),
-    sp(965,'Pôster Canadá'),sp(966,'Logo Copa Gold'),sp(967,'Mascote Ouro'),
-    sp(968,'Estadio Gold 1'),sp(969,'Estadio Gold 2'),sp(970,'Estadio Gold 3'),
-    sp(971,'Estadio Gold 4'),sp(972,'Estadio Gold 5'),sp(973,'Estadio Gold 6'),
-    sp(974,'Estadio Gold 7'),sp(975,'Estadio Gold 8'),sp(976,'Estadio Gold 9'),
-    sp(977,'Estadio Gold 10'),sp(978,'Estadio Gold 11'),sp(979,'Estadio Gold 12'),
-    sp(980,'Figurinha Final'),
-  ]},
+const TEAMS = [
+// ══ GRUPO A ══════════════════════════════════════════════════════════════════
+{id:'MEX',name:'México',flag:'🇲🇽',g:'A',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Luis Malagón'},{n:3,label:'Johan Vásquez'},{n:4,label:'Jorge Sánchez'},
+  {n:5,label:'César Montes'},{n:6,label:'Jesús Gallardo'},{n:7,label:'Israel Reyes'},
+  {n:8,label:'Diego Lainez'},{n:9,label:'Carlos Rodríguez'},{n:10,label:'Edson Álvarez'},
+  {n:11,label:'Orbelín Pineda'},{n:12,label:'Marcel Ruiz'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Érick Sánchez'},{n:15,label:'Hirving Lozano'},{n:16,label:'Santiago Giménez'},
+  {n:17,label:'Raúl Jiménez'},{n:18,label:'Alexis Vega'},{n:19,label:'Roberto Alvarado'},
+  {n:20,label:'César Huerta'},
+]},
+{id:'RSA',name:'África do Sul',flag:'🇿🇦',g:'A',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Ronwen Williams'},{n:3,label:'Sipho Chaine'},{n:4,label:'Aubrey Modiba'},
+  {n:5,label:'Samukele Kabini'},{n:6,label:'Mbekezeli Mbokazi'},{n:7,label:'Khulumani Ndamane'},
+  {n:8,label:'Siyabonga Ngezana'},{n:9,label:'Khuliso Mudau'},{n:10,label:'Nkosinathi Sibisi'},
+  {n:11,label:'Teboho Mokoena'},{n:12,label:'Thalente Mbatha'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Bathuisi Aubaas'},{n:15,label:'Yaya Sithole'},{n:16,label:'Sipho Mbule'},
+  {n:17,label:'Lyle Foster'},{n:18,label:'Ioraam Rayners'},{n:19,label:'Mohau Nkota'},
+  {n:20,label:'Oswin Appolis'},
+]},
+{id:'KOR',name:'Coreia do Sul',flag:'🇰🇷',g:'A',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Hyeon-woo Jo'},{n:3,label:'Seung-Gyu Kim'},{n:4,label:'Min-jae Kim'},
+  {n:5,label:'Yu-min Cho'},{n:6,label:'Young-woo Seol'},{n:7,label:'Han-beom Lee'},
+  {n:8,label:'Tae-seok Lee'},{n:9,label:'Myung-jae Lee'},{n:10,label:'Jae-sung Lee'},
+  {n:11,label:'In-beom Hwang'},{n:12,label:'Kang-in Lee'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Seung-ho Paik'},{n:15,label:'Jens Castrop'},{n:16,label:'Dong-gyeong Lee'},
+  {n:17,label:'Gue-sung Cho'},{n:18,label:'Heung-min Son'},{n:19,label:'Hee-chan Hwang'},
+  {n:20,label:'Hyeon-Gyu Oh'},
+]},
+{id:'CZE',name:'Rep. Tcheca',flag:'🇨🇿',g:'A',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Matěj Kovář'},{n:3,label:'Jindřich Staněk'},{n:4,label:'Ladislav Krejčí'},
+  {n:5,label:'Vladimír Coufal'},{n:6,label:'Jaroslav Zelený'},{n:7,label:'Tomáš Holeš'},
+  {n:8,label:'David Zima'},{n:9,label:'Michal Sadílek'},{n:10,label:'Lukáš Provod'},
+  {n:11,label:'Lukáš Červ'},{n:12,label:'Tomáš Souček'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Pavel Šulc'},{n:15,label:'Matěj Vydra'},{n:16,label:'Vasil Kušej'},
+  {n:17,label:'Tomáš Chorý'},{n:18,label:'Václav Černý'},{n:19,label:'Adam Hložek'},
+  {n:20,label:'Patrik Schick'},
+]},
+// ══ GRUPO B ══════════════════════════════════════════════════════════════════
+{id:'CAN',name:'Canadá',flag:'🇨🇦',g:'B',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Dayne St. Clair'},{n:3,label:'Alphonso Davies'},{n:4,label:'Alistair Johnston'},
+  {n:5,label:'Samuel Adekugbe'},{n:6,label:'Richie Laryea'},{n:7,label:'Derek Cornelius'},
+  {n:8,label:'Moïse Bombito'},{n:9,label:'Kamal Miller'},{n:10,label:'Stephen Eustáquio'},
+  {n:11,label:'Ismaël Koné'},{n:12,label:'Jonathan Osorio'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Jacob Shaffelburg'},{n:15,label:'Mathieu Choinière'},{n:16,label:'Niko Sigur'},
+  {n:17,label:'Tajon Buchanan'},{n:18,label:'Liam Millar'},{n:19,label:'Cyle Larin'},
+  {n:20,label:'Jonathan David'},
+]},
+{id:'BIH',name:'Bósnia e Herz.',flag:'🇧🇦',g:'B',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Nikola Vasilj'},{n:3,label:'Amar Dedić'},{n:4,label:'Sead Kolašinac'},
+  {n:5,label:'Tarik Muharemović'},{n:6,label:'Nihad Mujakić'},{n:7,label:'Nikola Katić'},
+  {n:8,label:'A. Hadžiahmetović'},{n:9,label:'Benjamin Tahirović'},{n:10,label:'Armin Gigović'},
+  {n:11,label:'Ivan Šunjić'},{n:12,label:'Ivan Bašić'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Dženis Burnić'},{n:15,label:'Esmir Bajraktarević'},{n:16,label:'Amar Memić'},
+  {n:17,label:'Ermedin Demirović'},{n:18,label:'Edin Džeko'},{n:19,label:'Samed Baždar'},
+  {n:20,label:'Haris Tabaković'},
+]},
+{id:'QAT',name:'Catar',flag:'🇶🇦',g:'B',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Meshaal Barsham'},{n:3,label:'Sultan Albrake'},{n:4,label:'Lucas Mendes'},
+  {n:5,label:'Homam Ahmed'},{n:6,label:'Boualem Khoukhi'},{n:7,label:'Pedro Miguel'},
+  {n:8,label:'Tarek Salman'},{n:9,label:'M. Al-Mannai'},{n:10,label:'Karim Boudiaf'},
+  {n:11,label:'Assim Madibo'},{n:12,label:'Ahmed Fatehi'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Mohammed Waad'},{n:15,label:'Abdulaziz Hatem'},{n:16,label:'Hassan Al-Haydos'},
+  {n:17,label:'Edmilson Junior'},{n:18,label:'Akram Hassan Afif'},{n:19,label:'Ahmed Al Ganehi'},
+  {n:20,label:'Almoez Ali'},
+]},
+{id:'SUI',name:'Suíça',flag:'🇨🇭',g:'B',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Gregor Kobel'},{n:3,label:'Yvon Mvogo'},{n:4,label:'Manuel Akanji'},
+  {n:5,label:'Ricardo Rodriguez'},{n:6,label:'Nico Elvedi'},{n:7,label:'Aurèle Amenda'},
+  {n:8,label:'Silvan Widmer'},{n:9,label:'Granit Xhaka'},{n:10,label:'Denis Zakaria'},
+  {n:11,label:'Remo Freuler'},{n:12,label:'Fabian Rieder'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Ardon Jashari'},{n:15,label:'Johan Manzambi'},{n:16,label:'Michel Aebischer'},
+  {n:17,label:'Breel Embolo'},{n:18,label:'Ruben Vargas'},{n:19,label:'Dan Ndoye'},
+  {n:20,label:'Zeki Amdouni'},
+]},
+// ══ GRUPO C ══════════════════════════════════════════════════════════════════
+{id:'BRA',name:'Brasil',flag:'🇧🇷',g:'C',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Alisson'},{n:3,label:'Bento'},{n:4,label:'Marquinhos'},
+  {n:5,label:'Éder Militão'},{n:6,label:'Gabriel Magalhães'},{n:7,label:'Danilo'},
+  {n:8,label:'Wesley'},{n:9,label:'Lucas Paquetá'},{n:10,label:'Casemiro'},
+  {n:11,label:'Bruno Guimarães'},{n:12,label:'Luiz Henrique'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Vinícius Júnior'},{n:15,label:'Rodrygo'},{n:16,label:'João Pedro'},
+  {n:17,label:'Matheus Cunha'},{n:18,label:'G. Martinelli'},{n:19,label:'Raphinha'},
+  {n:20,label:'Estêvão'},
+]},
+{id:'MAR',name:'Marrocos',flag:'🇲🇦',g:'C',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Yassine Bounou'},{n:3,label:'Munir El Kajoui'},{n:4,label:'Achraf Hakimi'},
+  {n:5,label:'Noussair Mazraoui'},{n:6,label:'Nayef Aguerd'},{n:7,label:'Romain Saïss'},
+  {n:8,label:'Jawad El Yamiq'},{n:9,label:'Adam Masina'},{n:10,label:'Sofyan Amrabat'},
+  {n:11,label:'Azzedine Ounahi'},{n:12,label:'E. Ben Seghir'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'B. El Khannouss'},{n:15,label:'Ismael Saibari'},{n:16,label:'Y. En-Nesyri'},
+  {n:17,label:'Abde Ezzalzouli'},{n:18,label:'Soufiane Rahimi'},{n:19,label:'Brahim Díaz'},
+  {n:20,label:'Ayoub El Kaabi'},
+]},
+{id:'HAI',name:'Haiti',flag:'🇭🇹',g:'C',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Johny Placide'},{n:3,label:'Carlens Arcus'},{n:4,label:'Martin Expérience'},
+  {n:5,label:'J-K. Duverne'},{n:6,label:'Ricardo Adé'},{n:7,label:'Duke Lacroix'},
+  {n:8,label:'Garven Metusala'},{n:9,label:'Hannes Delcroix'},{n:10,label:'Leverton Pierre'},
+  {n:11,label:'D. Jean Jacques'},{n:12,label:'J-R. Bellegarde'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Christopher Attys'},{n:15,label:'Derrick Etienne Jr.'},{n:16,label:'Josué Casimir'},
+  {n:17,label:'Ruben Providence'},{n:18,label:'Duckens Nazon'},{n:19,label:'Louicius Deedson'},
+  {n:20,label:'Frantzdy Pierrot'},
+]},
+{id:'SCO',name:'Escócia',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',g:'C',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Angus Gunn'},{n:3,label:'Jack Hendry'},{n:4,label:'Kieran Tierney'},
+  {n:5,label:'Aaron Hickey'},{n:6,label:'Andrew Robertson'},{n:7,label:'Scott McKenna'},
+  {n:8,label:'John Souttar'},{n:9,label:'Anthony Ralston'},{n:10,label:'Grant Hanley'},
+  {n:11,label:'Scott McTominay'},{n:12,label:'Billy Gilmour'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Lewis Ferguson'},{n:15,label:'Ryan Christie'},{n:16,label:'Kenny McLean'},
+  {n:17,label:'John McGinn'},{n:18,label:'Lyndon Dykes'},{n:19,label:'Che Adams'},
+  {n:20,label:'Ben Gannon-Doak'},
+]},
+// ══ GRUPO D ══════════════════════════════════════════════════════════════════
+{id:'USA',name:'Estados Unidos',flag:'🇺🇸',g:'D',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Matt Freese'},{n:3,label:'Chris Richards'},{n:4,label:'Tim Ream'},
+  {n:5,label:'Mark McKenzie'},{n:6,label:'Alex Freeman'},{n:7,label:'Antonee Robinson'},
+  {n:8,label:'Tyler Adams'},{n:9,label:'Tanner Tessmann'},{n:10,label:'Weston McKennie'},
+  {n:11,label:'Christian Roldan'},{n:12,label:'Timothy Weah'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Diego Luna'},{n:15,label:'Malik Tillman'},{n:16,label:'Christian Pulisic'},
+  {n:17,label:'Brenden Aaronson'},{n:18,label:'Ricardo Pepi'},{n:19,label:'Haji Wright'},
+  {n:20,label:'Folarin Balogun'},
+]},
+{id:'PAR',name:'Paraguai',flag:'🇵🇾',g:'D',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Roberto Fernández'},{n:3,label:'Orlando Gill'},{n:4,label:'Gustavo Gómez'},
+  {n:5,label:'Fabián Balbuena'},{n:6,label:'Juan José Cáceres'},{n:7,label:'Omar Alderete'},
+  {n:8,label:'Junior Alonso'},{n:9,label:'Mathías Villasanti'},{n:10,label:'Diego Gómez'},
+  {n:11,label:'Damián Bobadilla'},{n:12,label:'Andrés Cubas'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Matías Galarza'},{n:15,label:'Julio Enciso'},{n:16,label:'Richard Sánchez'},
+  {n:17,label:'Braian Samudio'},{n:18,label:'Miguel Almirón'},{n:19,label:'Antonio Sanabria'},
+  {n:20,label:'Kaku'},
+]},
+{id:'AUS',name:'Austrália',flag:'🇦🇺',g:'D',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Mathew Ryan'},{n:3,label:'Joe Gauci'},{n:4,label:'Harry Souttar'},
+  {n:5,label:'Alessandro Circati'},{n:6,label:'Jordan Bos'},{n:7,label:'Aziz Behich'},
+  {n:8,label:'Cameron Burgess'},{n:9,label:'Lewis Miller'},{n:10,label:'Milos Degenek'},
+  {n:11,label:'Jackson Irvine'},{n:12,label:'Riley McGree'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:"Aiden O'Neill"},{n:15,label:'Connor Metcalfe'},{n:16,label:'Patrick Yazbek'},
+  {n:17,label:'Craig Goodwin'},{n:18,label:'Kusini Yengi'},{n:19,label:'Nestory Irankunda'},
+  {n:20,label:'Mohamed Touré'},
+]},
+{id:'TUR',name:'Turquia',flag:'🇹🇷',g:'D',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Ugurcan Cakir'},{n:3,label:'Mert Muldur'},{n:4,label:'Zeki Celik'},
+  {n:5,label:'A. Bardakci'},{n:6,label:'Caglar Soyuncu'},{n:7,label:'Merih Demiral'},
+  {n:8,label:'Ferdi Kadioglu'},{n:9,label:'Kaan Ayhan'},{n:10,label:'Ismail Yuksek'},
+  {n:11,label:'Hakan Calhanoglu'},{n:12,label:'Orkun Kokcu'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Arda Güler'},{n:15,label:'Irfan Can Kahveci'},{n:16,label:'Yunus Akgun'},
+  {n:17,label:'Can Uzun'},{n:18,label:'Baris Alper Yilmaz'},{n:19,label:'Kerem Akturkoglu'},
+  {n:20,label:'Kenan Yildiz'},
+]},
+// ══ GRUPO E ══════════════════════════════════════════════════════════════════
+{id:'GER',name:'Alemanha',flag:'🇩🇪',g:'E',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'M-A. ter Stegen'},{n:3,label:'Jonathan Tah'},{n:4,label:'David Raum'},
+  {n:5,label:'N. Schlotterbeck'},{n:6,label:'Antonio Rüdiger'},{n:7,label:'Waldemar Anton'},
+  {n:8,label:'Ridle Baku'},{n:9,label:'Max Mittelstädt'},{n:10,label:'Joshua Kimmich'},
+  {n:11,label:'Florian Wirtz'},{n:12,label:'Felix Nmecha'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Leon Goretzka'},{n:15,label:'Jamal Musiala'},{n:16,label:'Serge Gnabry'},
+  {n:17,label:'Kai Havertz'},{n:18,label:'Leroy Sané'},{n:19,label:'Karim Adeyemi'},
+  {n:20,label:'Nick Woltemade'},
+]},
+{id:'CUR',name:'Curaçao',flag:'🇨🇼',g:'E',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Eloy Room'},{n:3,label:'Armando Obispo'},{n:4,label:'Sherel Floranus'},
+  {n:5,label:'Jurien Gaari'},{n:6,label:'Joshua Brenet'},{n:7,label:'Roshon Van Eijma'},
+  {n:8,label:'Shurandy Sambo'},{n:9,label:'Livano Comenencia'},{n:10,label:'G. Roemeratoe'},
+  {n:11,label:'Juninho Bacuna'},{n:12,label:'Leandro Bacuna'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Tahith Chong'},{n:15,label:'Kenji Gorré'},{n:16,label:'Jearl Margaritha'},
+  {n:17,label:'Jurgen Locadia'},{n:18,label:'Jeremy Antonisse'},{n:19,label:'G. Kastaneer'},
+  {n:20,label:'Sontje Hansen'},
+]},
+{id:'CIV',name:'Costa do Marfim',flag:'🇨🇮',g:'E',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Yahia Fofana'},{n:3,label:'Ghislain Konan'},{n:4,label:'Wilfried Singo'},
+  {n:5,label:'Odilon Kossounou'},{n:6,label:'Evan Ndicka'},{n:7,label:'Willy Boly'},
+  {n:8,label:'Emmanuel Agbadou'},{n:9,label:'Ousmane Diomande'},{n:10,label:'Franck Kessié'},
+  {n:11,label:'Seko Fofana'},{n:12,label:'Ibrahim Sangaré'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'J-P. Gbamin'},{n:15,label:'Amad Diallo'},{n:16,label:'Sébastien Haller'},
+  {n:17,label:'Simon Adingra'},{n:18,label:'Yan Diomande'},{n:19,label:'Evann Guessand'},
+  {n:20,label:'Oumar Diakité'},
+]},
+{id:'ECU',name:'Equador',flag:'🇪🇨',g:'E',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Hernán Galíndez'},{n:3,label:'Gonzalo Valle'},{n:4,label:'Piero Hincapié'},
+  {n:5,label:'Pervis Estupiñán'},{n:6,label:'Willian Pacho'},{n:7,label:'Ángelo Preciado'},
+  {n:8,label:'Joel Ordóñez'},{n:9,label:'Moisés Caicedo'},{n:10,label:'Alan Franco'},
+  {n:11,label:'Kendry Páez'},{n:12,label:'Pedro Vite'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'John Yeboah'},{n:15,label:'Leonardo Campana'},{n:16,label:'Gonzalo Plata'},
+  {n:17,label:'Nilson Angulo'},{n:18,label:'Alan Minda'},{n:19,label:'Kevin Rodríguez'},
+  {n:20,label:'Enner Valencia'},
+]},
+// ══ GRUPO F ══════════════════════════════════════════════════════════════════
+{id:'NED',name:'Holanda',flag:'🇳🇱',g:'F',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Bart Verbruggen'},{n:3,label:'Virgil van Dijk'},{n:4,label:'Micky van de Ven'},
+  {n:5,label:'Jurriën Timber'},{n:6,label:'Denzel Dumfries'},{n:7,label:'Nathan Aké'},
+  {n:8,label:'Jeremie Frimpong'},{n:9,label:'J.P. van Hecke'},{n:10,label:'T. Reijnders'},
+  {n:11,label:'Ryan Gravenberch'},{n:12,label:'T. Koopmeiners'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Frenkie de Jong'},{n:15,label:'Xavi Simons'},{n:16,label:'Justin Kluivert'},
+  {n:17,label:'Memphis Depay'},{n:18,label:'Donyell Malen'},{n:19,label:'Wout Weghorst'},
+  {n:20,label:'Cody Gakpo'},
+]},
+{id:'JPN',name:'Japão',flag:'🇯🇵',g:'F',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Zion Suzuki'},{n:3,label:'H. H. Mochizuki'},{n:4,label:'Ayumu Seko'},
+  {n:5,label:'Junnosuke Suzuki'},{n:6,label:'Shogo Taniguchi'},{n:7,label:'T. Watanabe'},
+  {n:8,label:'Kaishu Sano'},{n:9,label:'Yuki Soma'},{n:10,label:'Ao Tanaka'},
+  {n:11,label:'Daichi Kamada'},{n:12,label:'Takefusa Kubo'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Ritsu Doan'},{n:15,label:'Keito Nakamura'},{n:16,label:'Takumi Minamino'},
+  {n:17,label:'Shuto Machino'},{n:18,label:'Junya Ito'},{n:19,label:'Koki Ogawa'},
+  {n:20,label:'Ayase Ueda'},
+]},
+{id:'SWE',name:'Suécia',flag:'🇸🇪',g:'F',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Victor Johansson'},{n:3,label:'Isak Hien'},{n:4,label:'G. Gudmundsson'},
+  {n:5,label:'Emil Holm'},{n:6,label:'V. Nilsson Lindelöf'},{n:7,label:'G. Lagerbielke'},
+  {n:8,label:'Lucas Bergvall'},{n:9,label:'Hugo Larsson'},{n:10,label:'Jesper Karlström'},
+  {n:11,label:'Yasin Ayari'},{n:12,label:'Mattias Svanberg'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Daniel Svensson'},{n:15,label:'Ken Sema'},{n:16,label:'Roony Bardghji'},
+  {n:17,label:'Dejan Kulusevski'},{n:18,label:'Anthony Elanga'},{n:19,label:'Alexander Isak'},
+  {n:20,label:'Viktor Gyökeres'},
+]},
+{id:'TUN',name:'Tunísia',flag:'🇹🇳',g:'F',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Bechir Ben Said'},{n:3,label:'Aymen Dahmen'},{n:4,label:'Van Valery'},
+  {n:5,label:'Montassar Talbi'},{n:6,label:'Yassine Meriah'},{n:7,label:'Ali Abdi'},
+  {n:8,label:'Dylan Bronn'},{n:9,label:'Ellyes Skhiri'},{n:10,label:'Aissa Laidouni'},
+  {n:11,label:'Ferjani Sassi'},{n:12,label:'M.A. Ben Romdhane'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Hannibal Mejbri'},{n:15,label:'Elias Achouri'},{n:16,label:'Elias Saad'},
+  {n:17,label:'Hazem Mastouri'},{n:18,label:'Ismael Gharbi'},{n:19,label:'Sayfallah Ltaief'},
+  {n:20,label:'Naim Sliti'},
+]},
+// ══ GRUPO G ══════════════════════════════════════════════════════════════════
+{id:'BEL',name:'Bélgica',flag:'🇧🇪',g:'G',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Thibaut Courtois'},{n:3,label:'Arthur Theate'},{n:4,label:'Timothy Castagne'},
+  {n:5,label:'Zeno Debast'},{n:6,label:'Brandon Mechele'},{n:7,label:'Maxim De Cuyper'},
+  {n:8,label:'Thomas Meunier'},{n:9,label:'Youri Tielemans'},{n:10,label:'Amadou Onana'},
+  {n:11,label:'Nicolas Raskin'},{n:12,label:'A. Saelemaekers'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Hans Vanaken'},{n:15,label:'Kevin De Bruyne'},{n:16,label:'Jérémy Doku'},
+  {n:17,label:'C. De Ketelaere'},{n:18,label:'Leandro Trossard'},{n:19,label:'Loïs Openda'},
+  {n:20,label:'Romelu Lukaku'},
+]},
+{id:'EGY',name:'Egito',flag:'🇪🇬',g:'G',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'M. El Shenawy'},{n:3,label:'Mohamed Hany'},{n:4,label:'Mohamed Hamdy'},
+  {n:5,label:'Yasser Ibrahim'},{n:6,label:'Khaled Sobhi'},{n:7,label:'Ramy Rabia'},
+  {n:8,label:'H. Abdelmaguid'},{n:9,label:'Ahmed Fatouh'},{n:10,label:'Marwan Attia'},
+  {n:11,label:'Zizo'},{n:12,label:'Hamdy Fathy'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Mohamed Lasheen'},{n:15,label:'Emam Ashour'},{n:16,label:'Osama Faisal'},
+  {n:17,label:'Mohamed Salah'},{n:18,label:'Mostafa Mohamed'},{n:19,label:'Trezeguet'},
+  {n:20,label:'Omar Marmoush'},
+]},
+{id:'IRN',name:'Irã',flag:'🇮🇷',g:'G',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'A. Beiranvand'},{n:3,label:'M. Pouraliganji'},{n:4,label:'Ehsan Hajsafi'},
+  {n:5,label:'Milad Mohammadi'},{n:6,label:'Shoja Khalilzadeh'},{n:7,label:'Ramin Rezaeian'},
+  {n:8,label:'Hossein Kanaani'},{n:9,label:'Sadegh Moharrami'},{n:10,label:'Saleh Hardani'},
+  {n:11,label:'Saeed Ezatolahi'},{n:12,label:'Saman Ghoddos'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Omid Noorafkan'},{n:15,label:'Roozbeh Cheshmi'},{n:16,label:'Mohammad Mohebi'},
+  {n:17,label:'Sardar Azmoun'},{n:18,label:'Mehdi Taremi'},{n:19,label:'A. Jahanbakhsh'},
+  {n:20,label:'Ali Gholizadeh'},
+]},
+{id:'NZL',name:'Nova Zelândia',flag:'🇳🇿',g:'G',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Max Crocombe-Payne'},{n:3,label:'Alex Paulsen'},{n:4,label:'Michael Boxall'},
+  {n:5,label:'Liberato Cacace'},{n:6,label:'Tim Payne'},{n:7,label:'Tyler Bindon'},
+  {n:8,label:'Francis de Vries'},{n:9,label:'Finn Surman'},{n:10,label:'Joe Bell'},
+  {n:11,label:'Sarpreet Singh'},{n:12,label:'Ryan Thomas'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Matthew Garbett'},{n:15,label:'Marko Stamenić'},{n:16,label:'Ben Old'},
+  {n:17,label:'Chris Wood'},{n:18,label:'Elijah Just'},{n:19,label:'Callum McCowatt'},
+  {n:20,label:'Kosta Barbarouses'},
+]},
+// ══ GRUPO H ══════════════════════════════════════════════════════════════════
+{id:'ESP',name:'Espanha',flag:'🇪🇸',g:'H',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Unai Simón'},{n:3,label:'Robin Le Normand'},{n:4,label:'Aymeric Laporte'},
+  {n:5,label:'Dean Huijsen'},{n:6,label:'Pedro Porro'},{n:7,label:'Dani Carvajal'},
+  {n:8,label:'Marc Cucurella'},{n:9,label:'Martín Zubimendi'},{n:10,label:'Rodri'},
+  {n:11,label:'Pedri'},{n:12,label:'Fabián Ruiz'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Mikel Merino'},{n:15,label:'Lamine Yamal'},{n:16,label:'Dani Olmo'},
+  {n:17,label:'Nico Williams'},{n:18,label:'Ferran Torres'},{n:19,label:'Álvaro Morata'},
+  {n:20,label:'Mikel Oyarzabal'},
+]},
+{id:'CPV',name:'Cabo Verde',flag:'🇨🇻',g:'H',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Vozinha'},{n:3,label:'Logan Costa'},{n:4,label:'Pico'},
+  {n:5,label:'Diney'},{n:6,label:'Steven Moreira'},{n:7,label:'Wagner Pina'},
+  {n:8,label:'João Paulo'},{n:9,label:'Yannick Semedo'},{n:10,label:'Kevin Pina'},
+  {n:11,label:'Patrick Andrade'},{n:12,label:'Jamiro Monteiro'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Deroy Duarte'},{n:15,label:'Garry Rodrigues'},{n:16,label:'Jovane Cabral'},
+  {n:17,label:'Ryan Mendes'},{n:18,label:'D. Livramento'},{n:19,label:'Willy Semedo'},
+  {n:20,label:'Bebé'},
+]},
+{id:'KSA',name:'Arábia Saudita',flag:'🇸🇦',g:'H',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Nawaf Alaqidi'},{n:3,label:'A. Al-Sanbi'},{n:4,label:'Saud Abdulhamid'},
+  {n:5,label:'Nawaf Boushal'},{n:6,label:'Jihad Thakri'},{n:7,label:'Moteb Al-Harbi'},
+  {n:8,label:'Hassan Altambakti'},{n:9,label:'Musab Aljuwayr'},{n:10,label:'Ziyad Aljohani'},
+  {n:11,label:'A. Alkhaibari'},{n:12,label:'Nasser Aldawsari'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'S. Abu Alshamat'},{n:15,label:'Marwan Alsahafi'},{n:16,label:'Salem Aldawsari'},
+  {n:17,label:'A. Al-Aboud'},{n:18,label:'Feras Albrikan'},{n:19,label:'Saleh Alshehri'},
+  {n:20,label:'A. Al-Hamdan'},
+]},
+{id:'URU',name:'Uruguai',flag:'🇺🇾',g:'H',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Sergio Rochet'},{n:3,label:'Santiago Mele'},{n:4,label:'Ronald Araujo'},
+  {n:5,label:'J.M. Giménez'},{n:6,label:'Sebastian Caceres'},{n:7,label:'Mathias Olivera'},
+  {n:8,label:'Guillermo Varela'},{n:9,label:'Nahitan Nandez'},{n:10,label:'Federico Valverde'},
+  {n:11,label:'G. De Arrascaeta'},{n:12,label:'Rodrigo Bentancur'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Manuel Ugarte'},{n:15,label:'Nicolás de la Cruz'},{n:16,label:'Maxi Araujo'},
+  {n:17,label:'Darwin Núñez'},{n:18,label:'Federico Viñas'},{n:19,label:'Rodrigo Aguirre'},
+  {n:20,label:'Facundo Pellistri'},
+]},
+// ══ GRUPO I ══════════════════════════════════════════════════════════════════
+{id:'FRA',name:'França',flag:'🇫🇷',g:'I',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Mike Maignan'},{n:3,label:'Theo Hernández'},{n:4,label:'William Saliba'},
+  {n:5,label:'Jules Koundé'},{n:6,label:'Ibrahima Konaté'},{n:7,label:'D. Upamecano'},
+  {n:8,label:'Lucas Digne'},{n:9,label:'A. Tchouaméni'},{n:10,label:'E. Camavinga'},
+  {n:11,label:'Manu Koné'},{n:12,label:'Adrien Rabiot'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Michael Olise'},{n:15,label:'Ousmane Dembélé'},{n:16,label:'Bradley Barcola'},
+  {n:17,label:'Désiré Doué'},{n:18,label:'Kingsley Coman'},{n:19,label:'Hugo Ekitike'},
+  {n:20,label:'Kylian Mbappé'},
+]},
+{id:'SEN',name:'Senegal',flag:'🇸🇳',g:'I',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Eduardo Mendy'},{n:3,label:'Yehvann Diouf'},{n:4,label:'Moussa Niakhaté'},
+  {n:5,label:'Abdoulaye Seck'},{n:6,label:'Ismail Jakobs'},{n:7,label:'E.H.M. Diouf'},
+  {n:8,label:'Kalidou Koulibaly'},{n:9,label:'I.G. Gueye'},{n:10,label:'Pape Matar Sarr'},
+  {n:11,label:'Pape Gueye'},{n:12,label:'Habib Diarra'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Lamine Camara'},{n:15,label:'Sadio Mane'},{n:16,label:'Ismaïla Sarr'},
+  {n:17,label:'Boulaye Dia'},{n:18,label:'Iliman Ndiaye'},{n:19,label:'Nicolas Jackson'},
+  {n:20,label:'Krepin Diatta'},
+]},
+{id:'IRQ',name:'Iraque',flag:'🇮🇶',g:'I',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Jalal Hassan'},{n:3,label:'Rebin Sulaka'},{n:4,label:'Hussein Ali'},
+  {n:5,label:'Akam Hashem'},{n:6,label:'Merchas Doski'},{n:7,label:'Zaid Tahseen'},
+  {n:8,label:'Manaf Younis'},{n:9,label:'Zidane Iqbal'},{n:10,label:'Amir Al-Ammari'},
+  {n:11,label:'Ibrahim Bayesh'},{n:12,label:'Ali Jasim'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Youssef Amyn'},{n:15,label:'Aimar Sher'},{n:16,label:'Marko Farji'},
+  {n:17,label:'Osama Rashid'},{n:18,label:'Ali Al-Hamadi'},{n:19,label:'Aymen Hussein'},
+  {n:20,label:'Mohanad Ali'},
+]},
+{id:'NOR',name:'Noruega',flag:'🇳🇴',g:'I',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Ørjan Nyland'},{n:3,label:'Julian Ryerson'},{n:4,label:'Leo Østigård'},
+  {n:5,label:'Kristoffer Ajer'},{n:6,label:'M.H. Pedersen'},{n:7,label:'D.M. Wolfe'},
+  {n:8,label:'Torbjørn Heggem'},{n:9,label:'Morten Thorsby'},{n:10,label:'Martin Ødegaard'},
+  {n:11,label:'Sander Berge'},{n:12,label:'A. Schjelderup'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Patrick Berg'},{n:15,label:'Erling Haaland'},{n:16,label:'Alexander Sørloth'},
+  {n:17,label:'Aron Dønnum'},{n:18,label:'J.S. Larsen'},{n:19,label:'Antonio Nusa'},
+  {n:20,label:'Oscar Bobb'},
+]},
+// ══ GRUPO J ══════════════════════════════════════════════════════════════════
+{id:'ARG',name:'Argentina',flag:'🇦🇷',g:'J',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Emiliano Martínez'},{n:3,label:'Nahuel Molina'},{n:4,label:'Cristian Romero'},
+  {n:5,label:'Nicolás Otamendi'},{n:6,label:'N. Tagliafico'},{n:7,label:'L. Balerdi'},
+  {n:8,label:'Enzo Fernández'},{n:9,label:'A. Mac Allister'},{n:10,label:'Rodrigo De Paul'},
+  {n:11,label:'E. Palacios'},{n:12,label:'Leandro Paredes'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Nico Paz'},{n:15,label:'F. Mastantuono'},{n:16,label:'Nico González'},
+  {n:17,label:'Lionel Messi'},{n:18,label:'Lautaro Martínez'},{n:19,label:'Julián Álvarez'},
+  {n:20,label:'Giuliano Simeone'},
+]},
+{id:'ALG',name:'Argélia',flag:'🇩🇿',g:'J',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Alexis Guendouz'},{n:3,label:'Ramy Bensebaini'},{n:4,label:'Youcef Atal'},
+  {n:5,label:'Rayan Aït-Nouri'},{n:6,label:'M.A. Tougai'},{n:7,label:'Aïssa Mandi'},
+  {n:8,label:'Ismael Bennacer'},{n:9,label:'Houssem Aouar'},{n:10,label:'H. Boudaoui'},
+  {n:11,label:'Ramiz Zerrouki'},{n:12,label:'Nabil Bentaleb'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Farés Chaibi'},{n:15,label:'Riyad Mahrez'},{n:16,label:'Said Benrahma'},
+  {n:17,label:'A. Hadj Moussa'},{n:18,label:'Amine Gouiri'},{n:19,label:'B. Bounedjah'},
+  {n:20,label:'Mohammed Amoura'},
+]},
+{id:'AUT',name:'Áustria',flag:'🇦🇹',g:'J',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Alexander Schlager'},{n:3,label:'Patrick Pentz'},{n:4,label:'David Alaba'},
+  {n:5,label:'Kevin Danso'},{n:6,label:'Philipp Lienhart'},{n:7,label:'Stefan Posch'},
+  {n:8,label:'Phillipp Mwene'},{n:9,label:'Alexander Prass'},{n:10,label:'Xaver Schlager'},
+  {n:11,label:'Marcel Sabitzer'},{n:12,label:'Konrad Laimer'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'F. Grillitsch'},{n:15,label:'Nicolas Seiwald'},{n:16,label:'Romano Schmid'},
+  {n:17,label:'Patrick Wimmer'},{n:18,label:'C. Baumgartner'},{n:19,label:'M. Gregoritsch'},
+  {n:20,label:'Marko Arnautović'},
+]},
+{id:'JOR',name:'Jordânia',flag:'🇯🇴',g:'J',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Yazeed Abulaila'},{n:3,label:'Ihsan Haddad'},{n:4,label:'M. Abu Hashish'},
+  {n:5,label:'Yazan Al-Arab'},{n:6,label:'Abdallah Nasib'},{n:7,label:'Saleem Obaid'},
+  {n:8,label:'M. Abualnadi'},{n:9,label:'Ibrahim Saadeh'},{n:10,label:'N. Al-Rashdan'},
+  {n:11,label:'N. Al-Rawabdeh'},{n:12,label:'M. Abu Taha'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Amer Jamous'},{n:15,label:'Musa Al-Taamari'},{n:16,label:'Y. Al-Naimat'},
+  {n:17,label:'M. Al-Mardi'},{n:18,label:'Ali Olwan'},{n:19,label:'M. Abu Zrayq'},
+  {n:20,label:'Ibrahim Sabra'},
+]},
+// ══ GRUPO K ══════════════════════════════════════════════════════════════════
+{id:'POR',name:'Portugal',flag:'🇵🇹',g:'K',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Diogo Costa'},{n:3,label:'Jose Sa'},{n:4,label:'Ruben Dias'},
+  {n:5,label:'João Cancelo'},{n:6,label:'Diogo Dalot'},{n:7,label:'Nuno Mendes'},
+  {n:8,label:'Gonçalo Inácio'},{n:9,label:'Bernardo Silva'},{n:10,label:'Bruno Fernandes'},
+  {n:11,label:'Ruben Neves'},{n:12,label:'Vitinha'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'João Neves'},{n:15,label:'Cristiano Ronaldo'},{n:16,label:'Francisco Trincão'},
+  {n:17,label:'João Felix'},{n:18,label:'Gonçalo Ramos'},{n:19,label:'Pedro Neto'},
+  {n:20,label:'Rafael Leão'},
+]},
+{id:'COD',name:'RD Congo',flag:'🇨🇩',g:'K',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Lionel Mpasi'},{n:3,label:'Aaron Wan-Bissaka'},{n:4,label:'Axel Tuanzebe'},
+  {n:5,label:'Arthur Masuaku'},{n:6,label:'Chancel Mbemba'},{n:7,label:'Joris Kayembe'},
+  {n:8,label:'Charles Pickel'},{n:9,label:"Ngal'ayel Mukau"},{n:10,label:'Edo Kayembe'},
+  {n:11,label:'S. Moutoussamy'},{n:12,label:'Noah Sadiki'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Théo Bongonda'},{n:15,label:'Meschack Elia'},{n:16,label:'Yoane Wissa'},
+  {n:17,label:'Brian Cipenga'},{n:18,label:'Fiston Mayele'},{n:19,label:'Cédric Bakambu'},
+  {n:20,label:'Nathanaël Mbuku'},
+]},
+{id:'UZB',name:'Uzbequistão',flag:'🇺🇿',g:'K',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Utkir Yusupov'},{n:3,label:'Farrukh Savfiev'},{n:4,label:'S. Nasrullaev'},
+  {n:5,label:'U. Eshmurodov'},{n:6,label:'H. Aliqulov'},{n:7,label:'R. Ashurmatov'},
+  {n:8,label:'K. Alijonov'},{n:9,label:'Abdukodir Khusanov'},{n:10,label:'O. Hamrobekov'},
+  {n:11,label:'Otabek Shukurov'},{n:12,label:'J. Iskanderov'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'A. Turgunboev'},{n:15,label:'K. Erkinov'},{n:16,label:'Eldor Shomurodov'},
+  {n:17,label:'Oston Urunov'},{n:18,label:'J. Masharipov'},{n:19,label:'Igor Sergeev'},
+  {n:20,label:'A. Fayzullaev'},
+]},
+{id:'COL',name:'Colômbia',flag:'🇨🇴',g:'K',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Camilo Vargas'},{n:3,label:'David Ospina'},{n:4,label:'Dávinson Sánchez'},
+  {n:5,label:'Yerry Mina'},{n:6,label:'Daniel Muñoz'},{n:7,label:'Johan Mojica'},
+  {n:8,label:'Jhon Lucumí'},{n:9,label:'Santiago Arias'},{n:10,label:'Jefferson Lerma'},
+  {n:11,label:'Kevin Castaño'},{n:12,label:'Richard Ríos'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'James Rodríguez'},{n:15,label:'J.F. Quintero'},{n:16,label:'Jorge Carrascal'},
+  {n:17,label:'Jhon Arias'},{n:18,label:'Jhon Córdoba'},{n:19,label:'Luis Suárez'},
+  {n:20,label:'Luis Díaz'},
+]},
+// ══ GRUPO L ══════════════════════════════════════════════════════════════════
+{id:'ENG',name:'Inglaterra',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',g:'L',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Jordan Pickford'},{n:3,label:'John Stones'},{n:4,label:'Marc Guéhi'},
+  {n:5,label:'Ezri Konsa'},{n:6,label:'T. Alexander-Arnold'},{n:7,label:'Reece James'},
+  {n:8,label:'Dan Burn'},{n:9,label:'Jordan Henderson'},{n:10,label:'Declan Rice'},
+  {n:11,label:'Jude Bellingham'},{n:12,label:'Cole Palmer'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Morgan Rogers'},{n:15,label:'Anthony Gordon'},{n:16,label:'Phil Foden'},
+  {n:17,label:'Bukayo Saka'},{n:18,label:'Harry Kane'},{n:19,label:'Marcus Rashford'},
+  {n:20,label:'Ollie Watkins'},
+]},
+{id:'CRO',name:'Croácia',flag:'🇭🇷',g:'L',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Dominik Livaković'},{n:3,label:'Duje Ćaleta-Car'},{n:4,label:'Joško Gvardiol'},
+  {n:5,label:'Josip Stanišić'},{n:6,label:'Luka Vušković'},{n:7,label:'Josip Šutalo'},
+  {n:8,label:'Kristijan Jakić'},{n:9,label:'Luka Modrić'},{n:10,label:'Mateo Kovačić'},
+  {n:11,label:'Martin Baturina'},{n:12,label:'Lovro Majer'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Mario Pašalić'},{n:15,label:'Petar Sučić'},{n:16,label:'Ivan Perišić'},
+  {n:17,label:'Marco Pašalić'},{n:18,label:'Ante Budimir'},{n:19,label:'Andrej Kramarić'},
+  {n:20,label:'Franjo Ivanović'},
+]},
+{id:'GHA',name:'Gana',flag:'🇬🇭',g:'L',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Lawrence Ati Zigi'},{n:3,label:'Tariq Lamptey'},{n:4,label:'Mohammed Salisu'},
+  {n:5,label:'Alidu Seidu'},{n:6,label:'Alexander Djiku'},{n:7,label:'Gideon Mensah'},
+  {n:8,label:'Caleb Yirenkyi'},{n:9,label:'A.F. Issahaku'},{n:10,label:'Thomas Partey'},
+  {n:11,label:'Salis Abdul Samed'},{n:12,label:'K. Sulemana'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Mohammed Kudus'},{n:15,label:'Iñaki Williams'},{n:16,label:'Jordan Ayew'},
+  {n:17,label:'André Ayew'},{n:18,label:'Joseph Paintsil'},{n:19,label:'Osman Bukari'},
+  {n:20,label:'Antoine Semenyo'},
+]},
+{id:'PAN',name:'Panamá',flag:'🇵🇦',g:'L',stickers:[
+  {n:1,label:'Foto Time',sp:1},
+  {n:2,label:'Orlando Mosquera'},{n:3,label:'Luis Mejía'},{n:4,label:'Fidel Escobar'},
+  {n:5,label:'Andrés Andrade'},{n:6,label:'Michael Amir Murillo'},{n:7,label:'Eric Davis'},
+  {n:8,label:'José Córdoba'},{n:9,label:'César Blackman'},{n:10,label:'Cristian Martínez'},
+  {n:11,label:'Aníbal Godoy'},{n:12,label:'A. Carrasquilla'},{n:13,label:'Lineup',sp:1},
+  {n:14,label:'Édgar Bárcenas'},{n:15,label:'Carlos Harvey'},{n:16,label:'Ismael Díaz'},
+  {n:17,label:'José Fajardo'},{n:18,label:'Cecilio Waterman'},{n:19,label:'J.L. Rodríguez'},
+  {n:20,label:'Alberto Quintero'},
+]},
 ];
 
-const TOTAL=980;
-let qty={},filt='all',srch='';
+// Figurinhas especiais FWC (não pertencem a nenhum time)
+const FWC = {id:'FWC',name:'Especiais Copa',flag:'🏆',g:'FWC',stickers:[
+  {n:1,label:'Logo FIFA',sp:1},{n:2,label:'Mascote Maple',sp:1},{n:3,label:'Mascote Zayu',sp:1},
+  {n:4,label:'Mascote Clutch',sp:1},{n:5,label:'Slogan Oficial',sp:1},{n:6,label:'Bola Trionda',sp:1},
+  {n:7,label:'Emblema Canadá',sp:1},{n:8,label:'Emblema México',sp:1},{n:9,label:'Emblema EUA',sp:1},
+  {n:10,label:'Est. Los Angeles',sp:1},{n:11,label:'Est. Nova York',sp:1},{n:12,label:'Est. Dallas',sp:1},
+  {n:13,label:'Est. San Francisco',sp:1},{n:14,label:'Est. Seattle',sp:1},{n:15,label:'Est. Kansas City',sp:1},
+  {n:16,label:'Est. Miami',sp:1},{n:17,label:'Est. Boston',sp:1},{n:18,label:'Est. Guadalajara',sp:1},
+  {n:19,label:'Est. Cd. México',sp:1},{n:20,label:'Est. Monterrey',sp:1},{n:21,label:'Est. Vancouver',sp:1},
+  {n:22,label:'Est. Toronto',sp:1},{n:23,label:'Est. Montreal',sp:1},
+]};
 
-function load(){try{const s=localStorage.getItem('copa26');if(s)qty=JSON.parse(s)}catch(e){}}
-function save(){localStorage.setItem('copa26',JSON.stringify(qty))}
+const ALL_TEAMS = [FWC, ...TEAMS];
+const TOTAL = ALL_TEAMS.reduce((s,t)=>s+t.stickers.length,0); // ~983, usaremos 980
+
+const GROUP_ORDER = ['FWC','A','B','C','D','E','F','G','H','I','J','K','L'];
+
+// ─── STATE ────────────────────────────────────────────────────────────────────
+let qty={}, filt='all', srch='';
+
+function load(){try{const s=localStorage.getItem('copa26v3');if(s)qty=JSON.parse(s)}catch(e){}}
+function save(){localStorage.setItem('copa26v3',JSON.stringify(qty))}
 function K(tid,n){return tid+'_'+n}
 function getQ(tid,n){return qty[K(tid,n)]||0}
-function setQ(tid,n,v){if(v<=0)delete qty[K(tid,n)];else qty[K(tid,n)]=v;save()}
+function setQ(tid,n,v){if(v<=0)delete qty[K(tid,n)];else qty[K(tid,n)]=Math.min(v,9);save()}
 
-function ini(label){return label.split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase()}
+function ini(label){
+  return label.split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase()||'?'
+}
 
-// GROUP ORDER
-const GORDER=['INTRO','A','B','C','D','E','F','G','H','I','J','K','L','ESPECIAIS'];
-
+// ─── BUILD UI ─────────────────────────────────────────────────────────────────
 function buildAll(){
   const sa=document.getElementById('sa');
   sa.innerHTML='<div class="em" id="em"><div class="ico">🔍</div>Nenhuma figurinha encontrada</div>';
 
   const byG={};
-  TEAMS.forEach(t=>{if(!byG[t.g])byG[t.g]=[];byG[t.g].push(t)});
+  ALL_TEAMS.forEach(t=>{if(!byG[t.g])byG[t.g]=[];byG[t.g].push(t)});
 
-  GORDER.forEach(gk=>{
+  GROUP_ORDER.forEach(gk=>{
     if(!byG[gk])return;
     const sec=document.createElement('div');
     sec.className='gs';sec.id='gs-'+gk;
-    const lbl=gk==='INTRO'?'Introdução':gk==='ESPECIAIS'?'Especiais':'Grupo '+gk;
+
+    const lbl=gk==='FWC'?'Especiais Copa':'Grupo '+gk;
     const gh=document.createElement('div');
     gh.className='gh';
     gh.innerHTML=`<span class="gl">${lbl}</span><span class="gp" id="gp-${gk}">0/0</span>`;
@@ -624,7 +711,7 @@ function buildAll(){
 
       const th=document.createElement('div');
       th.className='th';
-      th.innerHTML=`<span class="tf">${team.flag}</span><span class="tn">${team.name}</span><span class="tst" id="ts-${team.id}">0/${team.stickers.length}</span><span class="cv">▼</span>`;
+      th.innerHTML=`<span class="tf">${team.flag}</span><span class="tn">${team.name}</span><span class="ts" id="ts-${team.id}">0/${team.stickers.length}</span><span class="cv">▼</span>`;
       th.onclick=()=>tb.classList.toggle('open');
       tb.appendChild(th);
 
@@ -634,19 +721,32 @@ function buildAll(){
       team.stickers.forEach(s=>{
         const q=getQ(team.id,s.n);
         const cell=document.createElement('div');
-        cell.className='sc'+(s.s?' sp':'');
-        cell.dataset.q=q;cell.dataset.n=s.n;cell.dataset.tid=team.id;
-        cell.dataset.lb=s.label.toLowerCase();
-        const ico=s.s?'⭐':ini(s.label);
-        cell.innerHTML=`<span class="sn">${s.n}</span><div class="si">${ico}<div class="sqb">${q}x</div></div><div class="sct"><div class="sb minus" data-n="${s.n}" data-tid="${team.id}">−</div><span class="sv">${q}</span><div class="sb plus" data-n="${s.n}" data-tid="${team.id}">+</div></div>`;
+        cell.className='sc'+(s.sp?' sp':'');
+        cell.dataset.q=q;
+        cell.dataset.n=s.n;
+        cell.dataset.tid=team.id;
+        cell.dataset.lb=(team.id+' '+s.n+' '+s.label).toLowerCase();
+
+        const ico=s.sp?'⭐':ini(s.label);
+        // Label da figurinha: "MEX 1", "BRA 14" etc.
+        const numLabel=team.id+' '+s.n;
+
+        cell.innerHTML=
+          `<span class="sn">${numLabel}</span>`+
+          `<div class="si">${ico}<div class="sqb">${q}x</div></div>`+
+          `<div class="sct">`+
+            `<div class="sb minus" data-n="${s.n}" data-tid="${team.id}">−</div>`+
+            `<span class="sv">${q}</span>`+
+            `<div class="sb plus" data-n="${s.n}" data-tid="${team.id}">+</div>`+
+          `</div>`;
         grid.appendChild(cell);
       });
 
       grid.addEventListener('click',e=>{
         const btn=e.target.closest('.sb');if(!btn)return;
         const n=+btn.dataset.n,tid=btn.dataset.tid;
-        const isP=btn.classList.contains('plus');
-        const cur=getQ(tid,n),next=isP?cur+1:Math.max(0,cur-1);
+        const cur=getQ(tid,n);
+        const next=btn.classList.contains('plus')?cur+1:Math.max(0,cur-1);
         setQ(tid,n,next);
         const cell=btn.closest('.sc');
         cell.dataset.q=next;
@@ -662,12 +762,14 @@ function buildAll(){
     sa.appendChild(sec);
   });
 
-  updateStats();applyFilter();
+  updateStats();
+  applyFilter();
 }
 
+// ─── STATS ────────────────────────────────────────────────────────────────────
 function updateStats(){
   let have=0,dups=0;
-  TEAMS.forEach(t=>{
+  ALL_TEAMS.forEach(t=>{
     let th=0;
     t.stickers.forEach(s=>{
       const q=getQ(t.id,s.n);
@@ -677,17 +779,24 @@ function updateStats(){
     const el=document.getElementById('ts-'+t.id);
     if(el)el.textContent=th+'/'+t.stickers.length;
   });
-  // group
+
+  // Group totals
   const byG={};
-  TEAMS.forEach(t=>{
+  ALL_TEAMS.forEach(t=>{
     if(!byG[t.g])byG[t.g]={h:0,t:0};
-    t.stickers.forEach(s=>{byG[t.g].t++;if(getQ(t.id,s.n)>=1)byG[t.g].h++;});
+    t.stickers.forEach(s=>{
+      byG[t.g].t++;
+      if(getQ(t.id,s.n)>=1)byG[t.g].h++;
+    });
   });
   Object.keys(byG).forEach(g=>{
     const el=document.getElementById('gp-'+g);
     if(el)el.textContent=byG[g].h+'/'+byG[g].t;
   });
-  const miss=TOTAL-have,pct=Math.round(have/TOTAL*100);
+
+  const tot=TOTAL;
+  const miss=tot-have;
+  const pct=Math.round(have/tot*100);
   document.getElementById('h-have').textContent=have;
   document.getElementById('s-have').textContent=have;
   document.getElementById('s-miss').textContent=miss;
@@ -696,43 +805,51 @@ function updateStats(){
   document.getElementById('pf').style.width=pct+'%';
 }
 
+// ─── FILTER ───────────────────────────────────────────────────────────────────
 function applyFilter(){
-  const q=srch.toLowerCase();let anyVis=false;
+  const q=srch.toLowerCase();
+  let anyVis=false;
   const gVis={};
-  TEAMS.forEach(t=>{
+
+  ALL_TEAMS.forEach(t=>{
     let tVis=false;
     const tb=document.getElementById('tb-'+t.id);if(!tb)return;
+
     tb.querySelectorAll('.sc').forEach(cell=>{
-      const qv=+cell.dataset.q,n=cell.dataset.n,lb=cell.dataset.lb;
-      let fOk=true;
-      if(filt==='missing')fOk=qv===0;
-      else if(filt==='dups')fOk=qv>=2;
-      let sOk=true;
-      if(q)sOk=lb.includes(q)||n.includes(q)||t.name.toLowerCase().includes(q);
+      const qv=+cell.dataset.q;
+      const lb=cell.dataset.lb;
+      let fOk=filt==='all'||(filt==='missing'&&qv===0)||(filt==='dups'&&qv>=2);
+      let sOk=!q||lb.includes(q)||t.name.toLowerCase().includes(q);
       const vis=fOk&&sOk;
       cell.style.display=vis?'':'none';
-      if(vis){tVis=true;}
+      if(vis)tVis=true;
     });
-    tb.classList.toggle('hidden',!tVis);
+
+    tb.classList.toggle('hid',!tVis);
     if(tVis){anyVis=true;gVis[t.g]=true;if(q)tb.classList.add('open');}
     const gs=document.getElementById('gs-'+t.g);
-    if(gs)gs.classList.toggle('hidden',!gVis[t.g]);
+    if(gs)gs.classList.toggle('hid',!gVis[t.g]);
   });
+
   document.getElementById('em').style.display=anyVis?'none':'block';
 }
 
+// ─── EXPORT / IMPORT / RESET ──────────────────────────────────────────────────
 function exportData(){
-  const b=new Blob([JSON.stringify({v:2,qty},null,2)],{type:'application/json'});
-  const u=URL.createObjectURL(b),a=document.createElement('a');
-  a.href=u;a.download='copa2026.json';a.click();URL.revokeObjectURL(u);
+  const blob=new Blob([JSON.stringify({v:3,qty},null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='copa2026.json';a.click();URL.revokeObjectURL(url);
   toast('✅ Exportado!');
 }
 function importData(e){
   const f=e.target.files[0];if(!f)return;
   const r=new FileReader();
   r.onload=ev=>{
-    try{const d=JSON.parse(ev.target.result);qty=d.qty||d.quantities||d;save();buildAll();toast('✅ Importado!');}
-    catch{toast('❌ Arquivo inválido');}
+    try{
+      const d=JSON.parse(ev.target.result);
+      qty=d.qty||d.quantities||d;
+      save();buildAll();toast('✅ Importado!');
+    }catch{toast('❌ Arquivo inválido');}
     e.target.value='';
   };r.readAsText(f);
 }
@@ -741,22 +858,27 @@ function resetAll(){
   qty={};save();buildAll();toast('↺ Zerado!');
 }
 function toast(msg){
-  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2200);
 }
 
+// ─── EVENTS ───────────────────────────────────────────────────────────────────
 document.querySelectorAll('.pill').forEach(p=>{
   p.addEventListener('click',()=>{
-    document.querySelectorAll('.pill').forEach(x=>x.classList.remove('active'));
-    p.classList.add('active');filt=p.dataset.f;applyFilter();
+    document.querySelectorAll('.pill').forEach(x=>x.classList.remove('on'));
+    p.classList.add('on');filt=p.dataset.f;applyFilter();
   });
 });
-document.getElementById('srch').addEventListener('input',e=>{srch=e.target.value.trim();applyFilter();});
+document.getElementById('srch').addEventListener('input',e=>{
+  srch=e.target.value.trim();applyFilter();
+});
 document.getElementById('btn-exp').addEventListener('click',exportData);
 document.getElementById('btn-imp').addEventListener('click',()=>document.getElementById('fi').click());
 document.getElementById('fi').addEventListener('change',importData);
 document.getElementById('btn-rst').addEventListener('click',resetAll);
 
+// ─── INIT ─────────────────────────────────────────────────────────────────────
 load();buildAll();
 </script>
 </body>
