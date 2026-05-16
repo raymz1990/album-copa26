@@ -658,18 +658,19 @@ const TEAMS = [
 
 // Figurinhas especiais FWC (não pertencem a nenhum time)
 const FWC = {id:'FWC',name:'Especiais Copa',flag:'🏆',g:'FWC',stickers:[
-  {n:1,label:'Logo FIFA',sp:1},{n:2,label:'Mascote Maple',sp:1},{n:3,label:'Mascote Zayu',sp:1},
-  {n:4,label:'Mascote Clutch',sp:1},{n:5,label:'Slogan Oficial',sp:1},{n:6,label:'Bola Trionda',sp:1},
+  {n:1,label:'Logo Panini',sp:1},{n:2,label:'Emblema Oficial',sp:1},{n:3,label:'Emblema Oficial',sp:1},
+  {n:4,label:'Mascotes Oficiais',sp:1},{n:5,label:'Slogan Oficial',sp:1},{n:6,label:'Bola Trionda',sp:1},
   {n:7,label:'Emblema Canadá',sp:1},{n:8,label:'Emblema México',sp:1},{n:9,label:'Emblema EUA',sp:1},
-  {n:10,label:'Est. Los Angeles',sp:1},{n:11,label:'Est. Nova York',sp:1},{n:12,label:'Est. Dallas',sp:1},
-  {n:13,label:'Est. San Francisco',sp:1},{n:14,label:'Est. Seattle',sp:1},{n:15,label:'Est. Kansas City',sp:1},
-  {n:16,label:'Est. Miami',sp:1},{n:17,label:'Est. Boston',sp:1},{n:18,label:'Est. Guadalajara',sp:1},
-  {n:19,label:'Est. Cd. México',sp:1},{n:20,label:'Est. Monterrey',sp:1},{n:21,label:'Est. Vancouver',sp:1},
-  {n:22,label:'Est. Toronto',sp:1},{n:23,label:'Est. Montreal',sp:1},
+  {n:10,label:'Itália 1934 - Museu da Fifa',sp:1},{n:11,label:'Uruguai 1950 - Museu da Fifa',sp:1},
+  {n:12,label:'Alemanha Ocidental 1954 - Museu da Fifa',sp:1},{n:13,label:'Brasil 1962 - Museu da Fifa',sp:1},
+  {n:14,label:'Alemanha Ocidental 1974 - Museu da Fifa',sp:1},{n:15,label:'Argentina 1986 - Museu da Fifa',sp:1},
+  {n:16,label:'Brasil 1994 - Museu da Fifa',sp:1},{n:17,label:'Brasil 2002 - Museu da Fifa',sp:1},
+  {n:18,label:'Itália 2006 - Museu da Fifa',sp:1},{n:19,label:'Alemanha 2014 - Museu da Fifa',sp:1},
+  {n:20,label:'Argentina 2022 - Museu da Fifa',sp:1},
 ]};
 
 const ALL_TEAMS = [FWC, ...TEAMS];
-const TOTAL = ALL_TEAMS.reduce((s,t)=>s+t.stickers.length,0); // ~983, usaremos 980
+const TOTAL = ALL_TEAMS.reduce((s,t)=>s+t.stickers.length,0); 
 
 const GROUP_ORDER = ['FWC','A','B','C','D','E','F','G','H','I','J','K','L'];
 
